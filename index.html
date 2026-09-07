@@ -310,29 +310,24 @@
       .lab-grid { grid-template-columns: 1.15fr 0.85fr; align-items: start; gap: 3.5rem; }
     }
     .stats {
-      display: grid;
-      grid-template-columns: 1fr;
+      display: flex;
+      flex-direction: column;
       gap: 0;
       margin-top: 1.75rem;
       border-top: 1px solid var(--line);
     }
-    @media (min-width: 640px) {
-      .stats {
-        grid-template-columns: minmax(7.5rem, 9.5rem) 1fr;
-      }
-    }
     .stat {
       display: grid;
-      grid-template-columns: subgrid;
-      grid-column: 1 / -1;
+      grid-template-columns: 8.75rem 1fr;
+      gap: 0.75rem 1.5rem;
       padding: 1.1rem 0;
       border-bottom: 1px solid var(--line);
       align-items: baseline;
-      gap: 0.35rem 1.5rem;
     }
-    @media (max-width: 639px) {
+    @media (max-width: 520px) {
       .stat {
-        display: block;
+        grid-template-columns: 1fr;
+        gap: 0.3rem;
       }
     }
     .stat dt {
@@ -342,9 +337,6 @@
       text-transform: uppercase;
       color: var(--sage);
       margin: 0;
-    }
-    @media (max-width: 639px) {
-      .stat dt { margin-bottom: 0.35rem; }
     }
     .stat dd {
       margin: 0;
