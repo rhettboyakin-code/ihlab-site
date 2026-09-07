@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Investable Humanity Leadership Lab · IHLab</title>
+  <meta name="description" content="IHLab brings fifty executive and civic leaders into one room to practice dignity-centered leadership, trauma-informed systems thinking, and accountability that scales care." />
+  <meta name="theme-color" content="#0E232E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,500;0,600;1,500;1,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="assets/ihlab-mark.svg" type="image/svg+xml" />
+  <style>
+    :root {
+      --navy: #0E232E;
+      --sage: #556248;
+      --ivory: #F0EEE0;
+      --gold: #A88428;
+      --coral: #C86A4F;
+      --white: #FFFFFF;
+      --line: rgba(14, 35, 46, 0.12);
+      --muted: rgba(14, 35, 46, 0.62);
+      --max: 1120px;
+      --pad: clamp(1.25rem, 4vw, 2.5rem);
+      --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+      --sans: "Work Sans", system-ui, -apple-system, Segoe UI, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      font-weight: 400;
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      color: var(--navy);
+      background: var(--ivory);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    img, svg { display: block; max-width: 100%; }
+    a { color: var(--gold); text-decoration: none; transition: opacity .2s ease; }
+    a:hover { opacity: .82; }
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+    }
+
+    .wrap {
+      width: min(100% - 2 * var(--pad), var(--max));
+      margin-inline: auto;
+    }
+
+    /* —— Typography —— */
+    h1, h2, h3, .display {
+      font-family: var(--serif);
+      font-weight: 500;
+      line-height: 1.12;
+      letter-spacing: -0.01em;
+      margin: 0 0 1rem;
+      color: var(--navy);
+    }
+    h1 { font-size: clamp(2.75rem, 7vw, 4.75rem); font-weight: 500; }
+    h2 { font-size: clamp(2.1rem, 4.5vw, 3.25rem); }
+    h3 { font-size: clamp(1.35rem, 2.4vw, 1.75rem); }
+    p { margin: 0 0 1.15rem; }
+    .lede { font-size: clamp(1.1rem, 2vw, 1.28rem); line-height: 1.7; color: var(--muted); max-width: 42rem; }
+    .section-label {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 0.8125rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0 0 1rem;
+    }
+    .sage { color: var(--sage); }
+
+    /* —— Buttons / badges —— */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 0.9375rem;
+      letter-spacing: 0.02em;
+      padding: 0.9rem 1.55rem;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform .15s ease, opacity .2s ease, background .2s ease;
+    }
+    .btn:hover { opacity: 1; transform: translateY(-1px); }
+    .btn-primary { background: var(--gold); color: var(--navy); }
+    .btn-primary:hover { background: #b89230; }
+    .btn-ghost {
+      background: transparent;
+      color: var(--navy);
+      border: 1px solid rgba(14, 35, 46, 0.28);
+    }
+    .btn-ghost:hover { border-color: var(--navy); }
+    .btn-on-dark.btn-ghost {
+      color: var(--ivory);
+      border-color: rgba(240, 238, 224, 0.35);
+    }
+    .btn-on-dark.btn-ghost:hover { border-color: var(--ivory); }
+    .badge {
+      display: inline-block;
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 0.6875rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      background: var(--coral);
+      color: var(--white);
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+    }
+
+    /* —— Sticky nav —— */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(240, 238, 224, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding: 0.85rem 0;
+      min-height: 4.25rem;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      color: var(--navy);
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .brand:hover { opacity: 1; }
+    .brand-mark { width: 42px; height: auto; flex-shrink: 0; }
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      line-height: 1.15;
+    }
+    .brand-text .top {
+      font-family: var(--serif);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .brand-rule {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      width: 100%;
+      max-width: 11.5rem;
+    }
+    .brand-rule::before,
+    .brand-rule::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: rgba(14, 35, 46, 0.28);
+    }
+    .brand-rule .diamond {
+      width: 5px;
+      height: 5px;
+      background: var(--navy);
+      transform: rotate(45deg);
+      opacity: 0.55;
+      flex-shrink: 0;
+    }
+    .brand-text .bottom {
+      font-family: var(--serif);
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      opacity: 0.78;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.35rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--navy);
+      letter-spacing: 0.01em;
+    }
+    .nav-links .nav-cta {
+      color: var(--navy);
+      background: var(--gold);
+      padding: 0.55rem 0.95rem;
+      border-radius: 2px;
+      font-weight: 600;
+    }
+    .nav-links .nav-cta:hover { opacity: 1; background: #b89230; }
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      padding: 0.45rem 0.65rem;
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--navy);
+      cursor: pointer;
+    }
+
+    /* —— Hero —— */
+    .hero {
+      padding: clamp(3.5rem, 9vw, 7rem) 0 clamp(3rem, 7vw, 5.5rem);
+    }
+    .hero-eyebrow {
+      font-family: var(--sans);
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--sage);
+      margin: 0 0 1.5rem;
+      max-width: 36rem;
+    }
+    .hero h1 { margin-bottom: 1.5rem; max-width: 14ch; }
+    .hero h1 .line2 { display: block; }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin: 2rem 0 2.75rem;
+    }
+    .proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem 1.75rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid var(--line);
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--muted);
+    }
+    .proof span { white-space: nowrap; }
+    .proof .dot { color: rgba(14, 35, 46, 0.28); }
+
+    /* —— Sections —— */
+    section { padding: clamp(3.5rem, 8vw, 6.5rem) 0; }
+    .divider { border: none; border-top: 1px solid var(--line); margin: 0; }
+    .section-head { margin-bottom: clamp(2rem, 4vw, 3rem); max-width: 40rem; }
+    .section-head h2 { margin-bottom: 1.1rem; }
+
+    /* Why */
+    .moves {
+      list-style: none;
+      margin: 2.5rem 0 0;
+      padding: 0;
+      display: grid;
+      gap: 1.75rem;
+    }
+    @media (min-width: 768px) {
+      .moves { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    }
+    .moves li {
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--line);
+    }
+    .moves .num {
+      font-family: var(--serif);
+      font-size: 0.8125rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.65rem;
+    }
+    .moves strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+    .moves p { margin: 0; color: var(--muted); font-size: 0.98rem; }
+
+    /* Lab / stats */
+    .lab-grid {
+      display: grid;
+      gap: 2.5rem;
+    }
+    @media (min-width: 900px) {
+      .lab-grid { grid-template-columns: 1.15fr 0.85fr; align-items: start; gap: 3.5rem; }
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-top: 1px solid var(--line);
+    }
+    .stat {
+      padding: 1.35rem 1.25rem 1.35rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .stat:nth-child(odd) { padding-right: 1.5rem; }
+    .stat:nth-child(even) { padding-left: 1.5rem; border-left: 1px solid var(--line); }
+    .stat dt {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 0.4rem;
+    }
+    .stat dd {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 500;
+      line-height: 1.35;
+    }
+
+    .callout {
+      background: var(--navy);
+      color: var(--ivory);
+      padding: clamp(1.75rem, 3.5vw, 2.35rem);
+      border-radius: 2px;
+    }
+    .callout .badge { margin-bottom: 1.1rem; }
+    .callout h3 {
+      color: var(--ivory);
+      font-size: clamp(1.45rem, 2.5vw, 1.85rem);
+      margin-bottom: 0.85rem;
+    }
+    .callout p {
+      color: rgba(240, 238, 224, 0.78);
+      margin-bottom: 0;
+      font-size: 0.98rem;
+    }
+    .callout .when {
+      margin-top: 1.15rem;
+      padding-top: 1.15rem;
+      border-top: 1px solid rgba(240, 238, 224, 0.15);
+      font-weight: 500;
+      color: var(--ivory);
+      font-size: 0.92rem;
+    }
+
+    /* Sampler */
+    .sampler-grid {
+      display: grid;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    @media (min-width: 768px) {
+      .sampler-grid { grid-template-columns: repeat(3, 1fr); gap: 1.75rem; }
+    }
+    .card {
+      padding: 1.75rem 0 0;
+      border-top: 1px solid var(--line);
+    }
+    .card h3 { margin-bottom: 0.65rem; }
+    .card p { margin: 0; color: var(--muted); font-size: 0.98rem; }
+    .note {
+      margin-top: 2.25rem;
+      font-size: 0.98rem;
+      color: var(--sage);
+      font-style: italic;
+      font-family: var(--serif);
+      max-width: 40rem;
+    }
+
+    /* Partners */
+    .partners-list {
+      display: grid;
+      gap: 1rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    @media (min-width: 768px) {
+      .partners-list { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    }
+    .partner-item {
+      background: rgba(14, 35, 46, 0.035);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      border-radius: 2px;
+      min-height: 7.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .partner-item strong {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 500;
+      line-height: 1.35;
+    }
+    .partners-tagline {
+      margin-top: 1.75rem;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--sage);
+      text-align: center;
+    }
+
+    /* Why attend */
+    .outcomes {
+      list-style: none;
+      margin: 2rem 0 2.25rem;
+      padding: 0;
+      display: grid;
+      gap: 0.85rem;
+      max-width: 38rem;
+    }
+    .outcomes li {
+      position: relative;
+      padding-left: 1.35rem;
+      color: var(--navy);
+      font-weight: 500;
+    }
+    .outcomes li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.55rem;
+      width: 7px;
+      height: 7px;
+      background: var(--coral);
+      border-radius: 50%;
+    }
+
+    /* Partner / form */
+    .panel {
+      background: var(--navy);
+      color: var(--ivory);
+      padding: clamp(2.5rem, 5vw, 4rem);
+      border-radius: 2px;
+    }
+    .panel .section-label { color: var(--gold); }
+    .panel h2 { color: var(--ivory); }
+    .panel .lede { color: rgba(240, 238, 224, 0.72); }
+    .panel-grid {
+      display: grid;
+      gap: 2.5rem;
+    }
+    @media (min-width: 860px) {
+      .panel-grid { grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+    }
+    .form {
+      display: grid;
+      gap: 0.95rem;
+    }
+    .form label {
+      display: grid;
+      gap: 0.35rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(240, 238, 224, 0.7);
+    }
+    .form input,
+    .form select,
+    .form textarea {
+      font-family: var(--sans);
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+      color: var(--navy);
+      background: var(--ivory);
+      border: 1px solid transparent;
+      border-radius: 2px;
+      padding: 0.8rem 0.9rem;
+      width: 100%;
+    }
+    .form textarea { min-height: 6.5rem; resize: vertical; }
+    .form .form-row {
+      display: grid;
+      gap: 0.95rem;
+    }
+    @media (min-width: 520px) {
+      .form .form-row { grid-template-columns: 1fr 1fr; }
+    }
+    .form .hint {
+      font-size: 0.8rem;
+      letter-spacing: 0;
+      text-transform: none;
+      font-weight: 400;
+      color: rgba(240, 238, 224, 0.5);
+      margin-top: 0.25rem;
+    }
+
+    /* Attend section form light */
+    .interest-light {
+      margin-top: 2rem;
+      max-width: 32rem;
+      display: grid;
+      gap: 0.85rem;
+    }
+    .interest-light label {
+      display: grid;
+      gap: 0.35rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--sage);
+    }
+    .interest-light input,
+    .interest-light select,
+    .interest-light textarea {
+      font-family: var(--sans);
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+      color: var(--navy);
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      padding: 0.8rem 0.9rem;
+      width: 100%;
+    }
+    .interest-light textarea { min-height: 5rem; resize: vertical; }
+
+    /* Footer */
+    .footer {
+      padding: clamp(3rem, 6vw, 4.5rem) 0 2.5rem;
+      border-top: 1px solid var(--line);
+    }
+    .footer-quote {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(1.5rem, 3vw, 2.1rem);
+      line-height: 1.3;
+      max-width: 22ch;
+      margin: 0 0 2.5rem;
+    }
+    .footer-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 2rem;
+      justify-content: space-between;
+      align-items: flex-end;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+    .footer-meta a { color: var(--gold); font-weight: 500; }
+    .footer-legal {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--line);
+      font-size: 0.82rem;
+      color: var(--muted);
+      max-width: 42rem;
+      line-height: 1.55;
+    }
+
+    /* Mobile nav */
+    @media (max-width: 860px) {
+      .nav-toggle { display: inline-flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: var(--ivory);
+        border-bottom: 1px solid var(--line);
+        padding: 0.5rem var(--pad) 1rem;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { border-top: 1px solid var(--line); }
+      .nav-links a {
+        display: block;
+        padding: 0.9rem 0.15rem;
+      }
+      .nav-links .nav-cta {
+        margin-top: 0.35rem;
+        text-align: center;
+      }
+      .brand-text .top { font-size: 0.62rem; }
+      .brand-text .bottom { font-size: 0.55rem; letter-spacing: 0.18em; }
+      .brand-rule { max-width: 9.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Sticky nav -->
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="IHLab home">
+        <img class="brand-mark" src="assets/ihlab-mark.svg" width="42" height="28" alt="" />
+        <span class="brand-text">
+          <span class="top">Investable Humanity</span>
+          <span class="brand-rule" aria-hidden="true"><span class="diamond"></span></span>
+          <span class="bottom">Leadership Lab</span>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" id="nav-toggle">Menu</button>
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="#why">Why</a></li>
+        <li><a href="#lab">The Lab</a></li>
+        <li><a href="#partners">Partners</a></li>
+        <li><a href="#attend">Attend</a></li>
+        <li><a class="nav-cta" href="#partner">Partner with us</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="wrap">
+        <p class="hero-eyebrow">An independent initiative · In collaboration with UAC, TOSLI &amp; Dignity.Us</p>
+        <h1>Utah has the heart.<span class="line2">It needs the infrastructure.</span></h1>
+        <p class="lede">Investable Humanity Leadership Lab brings fifty executive and civic leaders into one room to practice dignity-centered leadership, trauma-informed systems thinking, and the kind of accountability that scales care without creating dependency.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#attend">Request a seat</a>
+          <a class="btn btn-ghost" href="#partner">Partner with us</a>
+        </div>
+        <div class="proof" aria-label="Cohort at a glance">
+          <span>Founding Cohort 2027</span>
+          <span class="dot" aria-hidden="true">·</span>
+          <span>50 leaders</span>
+          <span class="dot" aria-hidden="true">·</span>
+          <span>8 sessions</span>
+          <span class="dot" aria-hidden="true">·</span>
+          <span>Salt Lake City</span>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider wrap" />
+
+    <!-- Why now -->
+    <section id="why">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="section-label">The opportunity</p>
+          <h2>Generosity is already here. Connection is not.</h2>
+          <p class="lede">Utah’s funders, founders, and frontline leaders are ready to do more. Too often they work in parallel: capable, committed, and still isolated from each other. IHLab is the shared practice space that turns goodwill into coordinated impact.</p>
+        </div>
+        <p style="margin-bottom:0;font-weight:500;">Three moves, one arc:</p>
+        <ol class="moves">
+          <li>
+            <div class="num">01</div>
+            <strong>See people as investable.</strong>
+            <p>Move from pity to partnership.</p>
+          </li>
+          <li>
+            <div class="num">02</div>
+            <strong>Lead with dignity under pressure.</strong>
+            <p>Use the Dignity Index when conflict gets expensive.</p>
+          </li>
+          <li>
+            <div class="num">03</div>
+            <strong>Build organizations that last.</strong>
+            <p>Align money, people, and mission so care helps rather than harms.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <hr class="divider wrap" />
+
+    <!-- The Lab -->
+    <section id="lab">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="section-label">A premium cohort experience</p>
+          <h2>Eight sessions. Real takeaways. A network that stays.</h2>
+        </div>
+        <div class="lab-grid">
+          <div>
+            <p>IHLab convenes CEOs, executive directors, founders, and civic innovators for a four-month cohort at The Other Side Village. Each gathering pairs a focused talk with workshopping and table conversation led by Dignity Fellows. You leave with tools you can use Monday, and peers who know your work by name.</p>
+            <dl class="stats">
+              <div class="stat">
+                <dt>Format</dt>
+                <dd>8 biweekly sessions · 3.5 hours each</dd>
+              </div>
+              <div class="stat">
+                <dt>Cohort</dt>
+                <dd>50 executive &amp; civic leaders</dd>
+              </div>
+              <div class="stat">
+                <dt>Venue</dt>
+                <dd>The Other Side Village · Salt Lake City</dd>
+              </div>
+              <div class="stat">
+                <dt>Investment</dt>
+                <dd>$2,500 per participant</dd>
+              </div>
+              <div class="stat" style="grid-column: 1 / -1; border-left: none; padding-left: 0;">
+                <dt>Launch</dt>
+                <dd>Cohort I · 2027</dd>
+              </div>
+            </dl>
+          </div>
+          <aside class="callout" aria-label="Launch luncheon">
+            <span class="badge">Nov 3 · 2026</span>
+            <h3>Inaugural launch luncheon</h3>
+            <p>With Dr. Timothy Shriver, co-creator of the Dignity Index.</p>
+            <p class="when">University of Utah · November 3, 2026</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider wrap" />
+
+    <!-- Sampler -->
+    <section id="sampler">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="section-label">What’s in the room</p>
+          <h2>A taste of the labs. The full programs stay with the partners who built them.</h2>
+          <p class="lede">IHLab is intentionally light on proprietary curriculum. You experience a curated sampler from our collaborating partners, then decide what belongs inside your organization.</p>
+        </div>
+        <div class="sampler-grid">
+          <article class="card">
+            <h3>Dignity.Us</h3>
+            <p>The Dignity Index in practice: contempt down, constructive dialogue up.</p>
+          </article>
+          <article class="card">
+            <h3>The Other Side Leadership Institute</h3>
+            <p>Civic leadership infrastructure with lived experience at the center.</p>
+          </article>
+          <article class="card">
+            <h3>Utah Advocacy Coalition</h3>
+            <p>Systems connection, Dignity Fellow pipeline, and the administrative backbone for Cohort I.</p>
+          </article>
+        </div>
+        <p class="note">Ideal next step after the sampler: bring a full partner program in-house (Dignity.Us, Trauma-Informed Utah, and more).</p>
+      </div>
+    </section>
+
+    <hr class="divider wrap" />
+
+    <!-- Collaborating Partners -->
+    <section id="partners">
+      <div class="wrap">
+        <div class="section-head" style="text-align:center;margin-inline:auto;">
+          <p class="section-label">In collaboration with</p>
+          <h2>Collaborating Partners</h2>
+        </div>
+        <ul class="partners-list">
+          <li class="partner-item"><strong>Utah Advocacy Coalition</strong></li>
+          <li class="partner-item"><strong>The Other Side Leadership Institute</strong></li>
+          <li class="partner-item"><strong>Dignity.Us</strong></li>
+        </ul>
+        <p class="partners-tagline">Independent initiative. Shared table.</p>
+      </div>
+    </section>
+
+    <hr class="divider wrap" />
+
+    <!-- Why attend -->
+    <section id="attend">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="section-label">Who this is for</p>
+          <h2>For leaders who carry other people’s outcomes.</h2>
+          <p class="lede">You’re already responsible for teams, budgets, and communities that need you sharp. IHLab is for the Monday after the retreat: fewer burned-out managers, clearer conflict, stronger cross-sector relationships, and a playbook written for <em>your</em> organization.</p>
+        </div>
+        <p style="font-weight:600;margin-bottom:0.5rem;">Outcomes you’ll feel:</p>
+        <ul class="outcomes">
+          <li>Dignity-indexed communication when stakes are high</li>
+          <li>Radical accountability without shame spirals</li>
+          <li>An applied capstone playbook, not a binder of theory</li>
+          <li>Peer access across nonprofit, business, and civic Utah</li>
+        </ul>
+
+        <h3 style="margin-top:2.5rem;">Request a seat in Cohort I</h3>
+        <p class="lede" style="margin-bottom:0;">Share a few details and we’ll follow up. Opens your email to Alyssa.</p>
+        <form class="interest-light" action="mailto:alyssa@ihlab.us" method="get" enctype="text/plain">
+          <input type="hidden" name="subject" value="IHLab Cohort I — seat interest" />
+          <label>Name
+            <input type="text" name="body" id="attend-name" placeholder="Your name" required autocomplete="name" />
+          </label>
+          <label>Email
+            <input type="email" id="attend-email" placeholder="you@organization.org" required autocomplete="email" />
+          </label>
+          <label>Organization
+            <input type="text" id="attend-org" placeholder="Organization" autocomplete="organization" />
+          </label>
+          <label>Role
+            <input type="text" id="attend-role" placeholder="Title / role" />
+          </label>
+          <label>Note (optional)
+            <textarea id="attend-note" placeholder="Anything we should know"></textarea>
+          </label>
+          <button class="btn btn-primary" type="submit" id="attend-submit">Request a seat</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Partner with us -->
+    <section id="partner">
+      <div class="wrap">
+        <div class="panel">
+          <div class="panel-grid">
+            <div>
+              <p class="section-label">Sit at the table</p>
+              <h2>Invest in the people who carry this work forward.</h2>
+              <p class="lede">Corporate and philanthropic partners help open seats, shape Cohort I, and stand beside Utah’s next network of dignity-centered leaders. Tiers from a single scholarship seat to founding partnership. Details (including any tax treatment) confirmed with each partner based on final program structure.</p>
+              <p style="margin:1.5rem 0 0;"><a class="btn btn-primary" href="mailto:alyssa@ihlab.us?subject=IHLab%20partnership%20inquiry">Talk with Alyssa</a></p>
+            </div>
+            <form class="form" action="mailto:alyssa@ihlab.us" method="get" enctype="text/plain" id="partner-form">
+              <input type="hidden" name="subject" value="IHLab partnership interest" />
+              <div class="form-row">
+                <label>Name
+                  <input type="text" id="partner-name" required autocomplete="name" />
+                </label>
+                <label>Email
+                  <input type="email" id="partner-email" required autocomplete="email" />
+                </label>
+              </div>
+              <label>Organization
+                <input type="text" id="partner-org" autocomplete="organization" />
+              </label>
+              <label>Interest
+                <select id="partner-interest">
+                  <option value="Scholarship seat(s)">Scholarship seat(s)</option>
+                  <option value="Cohort partnership">Cohort partnership</option>
+                  <option value="Founding partnership">Founding partnership</option>
+                  <option value="Not sure yet">Not sure yet</option>
+                </select>
+              </label>
+              <label>Message
+                <textarea id="partner-message" placeholder="How you’d like to be involved"></textarea>
+              </label>
+              <button class="btn btn-primary" type="submit">Partner with us</button>
+              <p class="hint">Opens your email client to alyssa@ihlab.us</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p class="footer-quote">The earliest investment pays the greatest dividends.</p>
+      <div class="footer-meta">
+        <div>
+          <a href="mailto:alyssa@ihlab.us">alyssa@ihlab.us</a>
+          <span aria-hidden="true"> · </span>
+          <a href="https://ihlab.us">ihlab.us</a>
+        </div>
+        <div>© <span id="year">2026</span> Investable Humanity Leadership Lab</div>
+      </div>
+      <p class="footer-legal">An independent initiative · In collaboration with Utah Advocacy Coalition, The Other Side Leadership Institute, and Dignity.Us</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var toggle = document.getElementById("nav-toggle");
+      var menu = document.getElementById("nav-menu");
+      if (toggle && menu) {
+        toggle.addEventListener("click", function () {
+          var open = menu.classList.toggle("open");
+          toggle.setAttribute("aria-expanded", open ? "true" : "false");
+          toggle.textContent = open ? "Close" : "Menu";
+        });
+        menu.querySelectorAll("a").forEach(function (link) {
+          link.addEventListener("click", function () {
+            menu.classList.remove("open");
+            toggle.setAttribute("aria-expanded", "false");
+            toggle.textContent = "Menu";
+          });
+        });
+      }
+
+      function buildBody(fields) {
+        return fields.map(function (f) {
+          return f.label + ": " + (f.value || "").trim();
+        }).join("\n");
+      }
+
+      function wireMailto(form, getFields) {
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          var subject = (form.querySelector('input[name="subject"]') || {}).value || "IHLab inquiry";
+          var body = buildBody(getFields());
+          window.location.href = "mailto:alyssa@ihlab.us?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+        });
+      }
+
+      var attendForm = document.querySelector("#attend form");
+      if (attendForm) {
+        wireMailto(attendForm, function () {
+          return [
+            { label: "Name", value: document.getElementById("attend-name").value },
+            { label: "Email", value: document.getElementById("attend-email").value },
+            { label: "Organization", value: document.getElementById("attend-org").value },
+            { label: "Role", value: document.getElementById("attend-role").value },
+            { label: "Note", value: document.getElementById("attend-note").value }
+          ];
+        });
+      }
+
+      var partnerForm = document.getElementById("partner-form");
+      if (partnerForm) {
+        wireMailto(partnerForm, function () {
+          return [
+            { label: "Name", value: document.getElementById("partner-name").value },
+            { label: "Email", value: document.getElementById("partner-email").value },
+            { label: "Organization", value: document.getElementById("partner-org").value },
+            { label: "Interest", value: document.getElementById("partner-interest").value },
+            { label: "Message", value: document.getElementById("partner-message").value }
+          ];
+        });
+      }
+
+      var y = document.getElementById("year");
+      if (y) y.textContent = String(new Date().getFullYear());
+    })();
+  </script>
+</body>
+</html>
