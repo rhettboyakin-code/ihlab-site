@@ -73,9 +73,10 @@
       font-size: 0.75rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--gold);
       margin: 0 0 0.85rem;
     }
+    .section-label { color: var(--sage); }
+    .hero-eyebrow { color: var(--gold); }
     .sage { color: var(--sage); }
 
     /* —— Buttons / badges —— */
@@ -249,7 +250,8 @@
     .proof {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.65rem 1.75rem;
+      align-items: center;
+      gap: 0.65rem 1.25rem;
       padding-top: 1.75rem;
       border-top: 1px solid var(--line);
       font-size: 0.9rem;
@@ -258,6 +260,10 @@
     }
     .proof span { white-space: nowrap; }
     .proof .dot { color: rgba(14, 35, 46, 0.28); }
+    .proof .badge {
+      margin-right: 0.15rem;
+      vertical-align: middle;
+    }
 
     /* —— Sections —— */
     section { padding: clamp(3.5rem, 8vw, 6.5rem) 0; }
@@ -938,8 +944,7 @@
             <a class="btn btn-ghost" href="#partner">Partner with us</a>
           </div>
           <div class="proof" aria-label="Cohort at a glance">
-            <span>Founding Cohort 2027</span>
-            <span class="dot" aria-hidden="true">·</span>
+            <span class="badge">Founding Cohort 2027</span>
             <span>50 leaders</span>
             <span class="dot" aria-hidden="true">·</span>
             <span>8 sessions</span>
