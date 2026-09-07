@@ -1,5 +1,33 @@
 # IHLab homepage — designer handoff
 
+## NOTES — Photo slots & Saprea cues (v1.1)
+
+**Intent:** Nonprofit About-page warmth (human faces, story photography, generous whitespace) inspired by saprea.org/about-us layout patterns. Do **not** copy Saprea branding, greens, or donate coral treatments. Keep IHLab tokens only.
+
+**Layout cues to preserve**
+1. Large candid portrait that soft-fades into ivory on one edge — hero text **beside** the photo, never over it.
+2. Soft muted section backgrounds: pale sage-tinted ivory bands (`#E8E9DF`) alternating with plain ivory.
+3. Story blocks: serif headline + short sans body **above** a wide documentary photo (not only side-by-side).
+4. Intimate natural faces / conversation groups — prefer roundtable, coffee-talk, friends-circle, listening.
+5. Spacious modular photo cards + thin dividers in lower sections; uppercase micro-labels already in brand.
+6. One full-bleed emotional band (friends-circle) with navy overlay + italic brand pull quote.
+
+**Photo slot map (stock Unsplash until IHLab shoot)**
+| Slot | File | Placement |
+|------|------|-----------|
+| Hero (right / below) | `assets/photos/coffee-talk.jpg` | Soft-fade into ivory; does not cover headline |
+| Why story (wide under copy) | `assets/photos/roundtable.jpg` | Headline+body above photo |
+| After Why split | `assets/photos/listening.jpg` | Text + image alternating split |
+| Full-bleed band | `assets/photos/friends-circle.jpg` | Mid-page + “The earliest investment…” |
+| The Lab | `assets/photos/lounge-diverse.jpg` | Photo + stats pairing |
+| Why attend | `assets/photos/listening.jpg` | Photo beside outcomes |
+| Partner (optional) | `assets/photos/duo-light.jpg` | Inside navy partner panel |
+| Sampler cards | roundtable / coffee-talk | Modular lower-section warmth |
+
+Footer credit (tiny): *Photos via Unsplash (stock placeholders until IHLab shoot).*
+
+---
+
 **Purpose:** Clickable HTML/CSS draft for Alyssa review. Rebuild or restyle freely in Hostinger Website Builder / WordPress later. This folder is the visual + copy source of truth for v1.
 
 **Paths**
@@ -50,14 +78,16 @@ https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,500;0,600;1,
 ## Section map (matches `index.html`)
 
 1. **Sticky nav** — mark + wordmark · Why · The Lab · Partners · Attend · Partner with us (gold CTA)
-2. **Hero** — independent-initiative eyebrow · “Utah has the heart…” · Request a seat → `#attend` · Partner with us → `#partner` · proof strip
-3. **Why** (`#why`) — opportunity · three moves
-4. **The Lab** (`#lab`) — stats grid · Nov 3 Shriver callout (navy panel + coral badge)
-5. **Sampler** (`#sampler`) — Dignity.Us · TOSLI · UAC cards
-6. **Collaborating Partners** (`#partners`) — never “Founding Partners” · tagline “Independent initiative. Shared table.”
-7. **Why attend** (`#attend`) — outcomes · interest form (mailto Alyssa)
-8. **Partner** (`#partner`) — navy panel · partnership form (mailto Alyssa)
-9. **Footer** — quote · contact · independent-initiative legal line
+2. **Hero** — type-led copy + soft-fade coffee-talk photo (beside, not over) · CTAs · proof strip
+3. **Why** (`#why`, sage band) — opportunity · three moves · story block (copy above wide roundtable photo)
+4. **Human split** — listening photo + italic human line
+5. **Full-bleed band** — friends-circle + navy overlay + brand pull quote
+6. **The Lab** (`#lab`, sage band) — lounge-diverse + stats pairing · Nov 3 Shriver callout (coral badge)
+7. **Sampler** (`#sampler`) — partner cards · modular photo cards
+8. **Collaborating Partners** (`#partners`) — never “Founding Partners” · tagline “Independent initiative. Shared table.”
+9. **Why attend** (`#attend`) — listening photo + outcomes · interest form (mailto Alyssa)
+10. **Partner** (`#partner`) — duo-light · navy panel · partnership form (mailto Alyssa)
+11. **Footer** — quote · contact · legal line · Unsplash photo credit
 
 ---
 

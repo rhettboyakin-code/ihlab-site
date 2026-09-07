@@ -577,6 +577,274 @@
       line-height: 1.55;
     }
 
+    /* —— Photographic warmth (Saprea cues, IHLab tokens) —— */
+    .soft-fade {
+      position: relative;
+      overflow: hidden;
+      border-radius: 2px;
+    }
+    .soft-fade img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .soft-fade--left::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 28%;
+      z-index: 1;
+      pointer-events: none;
+      background: linear-gradient(90deg, var(--ivory) 0%, rgba(240,238,224,0) 100%);
+    }
+    .soft-fade--bottom::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 22%;
+      z-index: 1;
+      pointer-events: none;
+      background: linear-gradient(0deg, var(--ivory) 0%, rgba(240,238,224,0) 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: clamp(2rem, 4vw, 3.5rem);
+      align-items: center;
+    }
+    @media (min-width: 900px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+        gap: clamp(2.5rem, 5vw, 4rem);
+      }
+      .hero-copy { padding-right: 0.5rem; }
+      .hero-photo {
+        min-height: clamp(22rem, 42vw, 32rem);
+        align-self: stretch;
+      }
+      .hero h1 { max-width: 12ch; }
+    }
+    @media (max-width: 899px) {
+      .hero-photo {
+        order: 2;
+        aspect-ratio: 4 / 3;
+        max-height: 22rem;
+      }
+      .hero-copy { order: 1; }
+      .soft-fade--left::before { width: 18%; }
+    }
+    .hero-photo img { object-position: 50% 35%; }
+
+    .band-sage {
+      background: #E8E9DF; /* pale sage-tinted ivory — not Saprea green */
+    }
+    .band-plain { background: var(--ivory); }
+
+    .story-block { margin-top: clamp(2rem, 4vw, 3rem); }
+    .story-block .story-copy { max-width: 40rem; margin-bottom: 1.75rem; }
+    .story-block .story-copy h3 {
+      font-size: clamp(1.45rem, 2.6vw, 1.9rem);
+      margin-bottom: 0.65rem;
+    }
+    .story-block .story-copy p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+    .story-photo {
+      border-radius: 2px;
+      overflow: hidden;
+      aspect-ratio: 21 / 9;
+      min-height: 14rem;
+    }
+    @media (max-width: 700px) {
+      .story-photo { aspect-ratio: 16 / 10; }
+    }
+    .story-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .split {
+      display: grid;
+      gap: clamp(1.75rem, 4vw, 3.25rem);
+      align-items: center;
+    }
+    @media (min-width: 860px) {
+      .split { grid-template-columns: 1fr 1fr; gap: clamp(2.5rem, 5vw, 4rem); }
+      .split--flip .split-media { order: 2; }
+      .split--flip .split-copy { order: 1; }
+    }
+    .split-media {
+      border-radius: 2px;
+      overflow: hidden;
+      aspect-ratio: 4 / 5;
+      max-height: 34rem;
+    }
+    @media (min-width: 860px) {
+      .split-media { aspect-ratio: 4 / 5; min-height: 26rem; }
+    }
+    .split-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .split-copy .human-line {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+      line-height: 1.35;
+      color: var(--navy);
+      margin: 0 0 1rem;
+      max-width: 22ch;
+    }
+    .split-copy p { color: var(--muted); margin: 0; max-width: 34rem; }
+
+    .photo-band {
+      position: relative;
+      min-height: clamp(22rem, 48vw, 32rem);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: clamp(3rem, 8vw, 6rem) var(--pad);
+    }
+    .photo-band__img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+    }
+    .photo-band__overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(14,35,46,0.55) 0%, rgba(14,35,46,0.42) 45%, rgba(14,35,46,0.62) 100%);
+    }
+    .photo-band__quote {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      max-width: 18ch;
+      text-align: center;
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 500;
+      font-size: clamp(1.65rem, 4vw, 2.65rem);
+      line-height: 1.28;
+      color: var(--ivory);
+      letter-spacing: -0.01em;
+    }
+
+    .lab-media-grid {
+      display: grid;
+      gap: 2.5rem;
+      margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+    }
+    @media (min-width: 900px) {
+      .lab-media-grid {
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 3.25rem;
+        align-items: stretch;
+      }
+    }
+    .lab-photo {
+      border-radius: 2px;
+      overflow: hidden;
+      min-height: 16rem;
+      aspect-ratio: 4 / 3;
+    }
+    .lab-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 40% 50%;
+      display: block;
+    }
+
+    .attend-split {
+      display: grid;
+      gap: 2.5rem;
+      margin-bottom: 2.75rem;
+    }
+    @media (min-width: 860px) {
+      .attend-split {
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 3.25rem;
+        align-items: start;
+      }
+    }
+    .attend-photo {
+      border-radius: 2px;
+      overflow: hidden;
+      aspect-ratio: 5 / 4;
+      min-height: 14rem;
+    }
+    .attend-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+    }
+
+    .photo-cards {
+      display: grid;
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+    @media (min-width: 768px) {
+      .photo-cards { grid-template-columns: 1.1fr 0.9fr; gap: 1.5rem; }
+    }
+    .photo-card {
+      border-radius: 2px;
+      overflow: hidden;
+      position: relative;
+      min-height: 14rem;
+      border-top: 1px solid var(--line);
+      padding-top: 0;
+    }
+    .photo-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 14rem;
+      object-fit: cover;
+      display: block;
+    }
+    .photo-card--tall { min-height: 18rem; }
+    @media (min-width: 768px) {
+      .photo-card--tall { min-height: 100%; }
+    }
+
+    .partner-visual {
+      margin-bottom: 1.75rem;
+      border-radius: 2px;
+      overflow: hidden;
+      aspect-ratio: 16 / 10;
+      max-width: 28rem;
+    }
+    .partner-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+    }
+
+    .photo-credit {
+      margin: 1.25rem 0 0;
+      font-size: 0.7rem;
+      letter-spacing: 0.04em;
+      color: rgba(14, 35, 46, 0.42);
+      font-weight: 400;
+    }
+
     /* Mobile nav */
     @media (max-width: 860px) {
       .nav-toggle { display: inline-flex; }
@@ -634,31 +902,36 @@
 
   <main id="top">
     <!-- Hero -->
-    <section class="hero">
-      <div class="wrap">
-        <p class="hero-eyebrow">An independent initiative · In collaboration with UAC, TOSLI &amp; Dignity.Us</p>
-        <h1>Utah has the heart.<span class="line2">It needs the infrastructure.</span></h1>
-        <p class="lede">Investable Humanity Leadership Lab brings fifty executive and civic leaders into one room to practice dignity-centered leadership, trauma-informed systems thinking, and the kind of accountability that scales care without creating dependency.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#attend">Request a seat</a>
-          <a class="btn btn-ghost" href="#partner">Partner with us</a>
+    <section class="hero band-plain">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="hero-eyebrow">An independent initiative · In collaboration with UAC, TOSLI &amp; Dignity.Us</p>
+          <h1>Utah has the heart.<span class="line2">It needs the infrastructure.</span></h1>
+          <p class="lede">Investable Humanity Leadership Lab brings fifty executive and civic leaders into one room to practice dignity-centered leadership, trauma-informed systems thinking, and the kind of accountability that scales care without creating dependency.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#attend">Request a seat</a>
+            <a class="btn btn-ghost" href="#partner">Partner with us</a>
+          </div>
+          <div class="proof" aria-label="Cohort at a glance">
+            <span>Founding Cohort 2027</span>
+            <span class="dot" aria-hidden="true">·</span>
+            <span>50 leaders</span>
+            <span class="dot" aria-hidden="true">·</span>
+            <span>8 sessions</span>
+            <span class="dot" aria-hidden="true">·</span>
+            <span>Salt Lake City</span>
+          </div>
         </div>
-        <div class="proof" aria-label="Cohort at a glance">
-          <span>Founding Cohort 2027</span>
-          <span class="dot" aria-hidden="true">·</span>
-          <span>50 leaders</span>
-          <span class="dot" aria-hidden="true">·</span>
-          <span>8 sessions</span>
-          <span class="dot" aria-hidden="true">·</span>
-          <span>Salt Lake City</span>
-        </div>
+        <figure class="hero-photo soft-fade soft-fade--left soft-fade--bottom" aria-label="Leaders in conversation over coffee">
+          <img src="assets/photos/coffee-talk.jpg" alt="Four colleagues smiling and collaborating around a café table" width="900" height="1100" loading="eager" decoding="async" />
+        </figure>
       </div>
     </section>
 
     <hr class="divider wrap" />
 
     <!-- Why now -->
-    <section id="why">
+    <section id="why" class="band-sage">
       <div class="wrap">
         <div class="section-head">
           <p class="section-label">The opportunity</p>
@@ -683,19 +956,54 @@
             <p>Align money, people, and mission so care helps rather than harms.</p>
           </li>
         </ol>
+
+        <div class="story-block">
+          <div class="story-copy">
+            <p class="section-label">In the room</p>
+            <h3>Practice happens face to face.</h3>
+            <p>Tables, not webinars. Peers who learn your work by name and stay with you after the cohort ends.</p>
+          </div>
+          <figure class="story-photo">
+            <img src="assets/photos/roundtable.jpg" alt="Leaders in workshop dialogue around a shared table" width="1400" height="600" loading="lazy" decoding="async" />
+          </figure>
+        </div>
       </div>
     </section>
 
-    <hr class="divider wrap" />
+    <!-- Human split after Why -->
+    <section class="band-plain" aria-label="Human connection">
+      <div class="wrap">
+        <div class="split">
+          <figure class="split-media">
+            <img src="assets/photos/listening.jpg" alt="Two professionals in an attentive one-on-one conversation" width="800" height="1000" loading="lazy" decoding="async" />
+          </figure>
+          <div class="split-copy">
+            <p class="section-label">Why it matters</p>
+            <p class="human-line">Leadership gets clearer when someone is really listening.</p>
+            <p>IHLab makes room for the conversations that change how teams treat conflict, care, and accountability on Monday morning.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Full-bleed emotional band -->
+    <aside class="photo-band" aria-label="Pull quote">
+      <img class="photo-band__img" src="assets/photos/friends-circle.jpg" alt="Friends linked arm-in-arm looking out toward the horizon" width="1600" height="900" loading="lazy" decoding="async" />
+      <div class="photo-band__overlay" aria-hidden="true"></div>
+      <blockquote class="photo-band__quote">The earliest investment pays the greatest dividends.</blockquote>
+    </aside>
 
     <!-- The Lab -->
-    <section id="lab">
+    <section id="lab" class="band-sage">
       <div class="wrap">
         <div class="section-head">
           <p class="section-label">A premium cohort experience</p>
           <h2>Eight sessions. Real takeaways. A network that stays.</h2>
         </div>
-        <div class="lab-grid">
+        <div class="lab-media-grid">
+          <figure class="lab-photo">
+            <img src="assets/photos/lounge-diverse.jpg" alt="Diverse workshop group with sticky-note wall and shared table" width="1000" height="750" loading="lazy" decoding="async" />
+          </figure>
           <div>
             <p>IHLab convenes CEOs, executive directors, founders, and civic innovators for a four-month cohort at The Other Side Village. Each gathering pairs a focused talk with workshopping and table conversation led by Dignity Fellows. You leave with tools you can use Monday, and peers who know your work by name.</p>
             <dl class="stats">
@@ -721,20 +1029,20 @@
               </div>
             </dl>
           </div>
-          <aside class="callout" aria-label="Launch luncheon">
-            <span class="badge">Nov 3 · 2026</span>
-            <h3>Inaugural launch luncheon</h3>
-            <p>With Dr. Timothy Shriver, co-creator of the Dignity Index.</p>
-            <p class="when">University of Utah · November 3, 2026</p>
-          </aside>
         </div>
+        <aside class="callout" aria-label="Launch luncheon" style="max-width: 36rem;">
+          <span class="badge">Nov 3 · 2026</span>
+          <h3>Inaugural launch luncheon</h3>
+          <p>With Dr. Timothy Shriver, co-creator of the Dignity Index.</p>
+          <p class="when">University of Utah · November 3, 2026</p>
+        </aside>
       </div>
     </section>
 
     <hr class="divider wrap" />
 
     <!-- Sampler -->
-    <section id="sampler">
+    <section id="sampler" class="band-plain">
       <div class="wrap">
         <div class="section-head">
           <p class="section-label">What’s in the room</p>
@@ -755,6 +1063,14 @@
             <p>Systems connection, Dignity Fellow pipeline, and the administrative backbone for Cohort I.</p>
           </article>
         </div>
+        <div class="photo-cards" aria-hidden="false">
+          <figure class="photo-card photo-card--tall">
+            <img src="assets/photos/roundtable.jpg" alt="Workshop dialogue at a round table" width="900" height="1100" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="photo-card">
+            <img src="assets/photos/coffee-talk.jpg" alt="Small-group collaboration over coffee" width="900" height="700" loading="lazy" decoding="async" />
+          </figure>
+        </div>
         <p class="note">Ideal next step after the sampler: bring a full partner program in-house (Dignity.Us, Trauma-Informed Utah, and more).</p>
       </div>
     </section>
@@ -762,7 +1078,7 @@
     <hr class="divider wrap" />
 
     <!-- Collaborating Partners -->
-    <section id="partners">
+    <section id="partners" class="band-sage">
       <div class="wrap">
         <div class="section-head" style="text-align:center;margin-inline:auto;">
           <p class="section-label">In collaboration with</p>
@@ -780,20 +1096,27 @@
     <hr class="divider wrap" />
 
     <!-- Why attend -->
-    <section id="attend">
+    <section id="attend" class="band-plain">
       <div class="wrap">
         <div class="section-head">
           <p class="section-label">Who this is for</p>
           <h2>For leaders who carry other people’s outcomes.</h2>
           <p class="lede">You’re already responsible for teams, budgets, and communities that need you sharp. IHLab is for the Monday after the retreat: fewer burned-out managers, clearer conflict, stronger cross-sector relationships, and a playbook written for <em>your</em> organization.</p>
         </div>
-        <p style="font-weight:600;margin-bottom:0.5rem;">Outcomes you’ll feel:</p>
-        <ul class="outcomes">
-          <li>Dignity-indexed communication when stakes are high</li>
-          <li>Radical accountability without shame spirals</li>
-          <li>An applied capstone playbook, not a binder of theory</li>
-          <li>Peer access across nonprofit, business, and civic Utah</li>
-        </ul>
+        <div class="attend-split">
+          <figure class="attend-photo">
+            <img src="assets/photos/listening.jpg" alt="Two professionals in focused conversation" width="900" height="720" loading="lazy" decoding="async" />
+          </figure>
+          <div>
+            <p style="font-weight:600;margin-bottom:0.5rem;">Outcomes you’ll feel:</p>
+            <ul class="outcomes">
+              <li>Dignity-indexed communication when stakes are high</li>
+              <li>Radical accountability without shame spirals</li>
+              <li>An applied capstone playbook, not a binder of theory</li>
+              <li>Peer access across nonprofit, business, and civic Utah</li>
+            </ul>
+          </div>
+        </div>
 
         <h3 style="margin-top:2.5rem;">Request a seat in Cohort I</h3>
         <p class="lede" style="margin-bottom:0;">Share a few details and we’ll follow up. Opens your email to Alyssa.</p>
@@ -820,11 +1143,14 @@
     </section>
 
     <!-- Partner with us -->
-    <section id="partner">
+    <section id="partner" class="band-sage">
       <div class="wrap">
         <div class="panel">
           <div class="panel-grid">
             <div>
+              <figure class="partner-visual">
+                <img src="assets/photos/duo-light.jpg" alt="Partnership high-five moment between two collaborators" width="800" height="500" loading="lazy" decoding="async" />
+              </figure>
               <p class="section-label">Sit at the table</p>
               <h2>Invest in the people who carry this work forward.</h2>
               <p class="lede">Corporate and philanthropic partners help open seats, shape Cohort I, and stand beside Utah’s next network of dignity-centered leaders. Tiers from a single scholarship seat to founding partnership. Details (including any tax treatment) confirmed with each partner based on final program structure.</p>
@@ -875,6 +1201,7 @@
         <div>© <span id="year">2026</span> Investable Humanity Leadership Lab</div>
       </div>
       <p class="footer-legal">An independent initiative · In collaboration with Utah Advocacy Coalition, The Other Side Leadership Institute, and Dignity.Us</p>
+      <p class="photo-credit">Photos via Unsplash (stock placeholders until IHLab shoot).</p>
     </div>
   </footer>
 
