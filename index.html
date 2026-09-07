@@ -61,19 +61,20 @@
       margin: 0 0 1rem;
       color: var(--navy);
     }
-    h1 { font-size: clamp(2.75rem, 7vw, 4.75rem); font-weight: 500; }
-    h2 { font-size: clamp(2.1rem, 4.5vw, 3.25rem); }
-    h3 { font-size: clamp(1.35rem, 2.4vw, 1.75rem); }
+    h1 { font-size: clamp(2.6rem, 6.5vw, 4.25rem); font-weight: 500; }
+    h2 { font-size: clamp(1.85rem, 3.8vw, 2.75rem); }
+    h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
     p { margin: 0 0 1.15rem; }
-    .lede { font-size: clamp(1.1rem, 2vw, 1.28rem); line-height: 1.7; color: var(--muted); max-width: 42rem; }
-    .section-label {
+    .lede { font-size: 1.125rem; line-height: 1.65; color: var(--muted); max-width: 40rem; margin-bottom: 0; }
+    .section-label,
+    .hero-eyebrow {
       font-family: var(--serif);
       font-weight: 500;
-      font-size: 0.8125rem;
-      letter-spacing: 0.22em;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--gold);
-      margin: 0 0 1rem;
+      margin: 0 0 0.85rem;
     }
     .sage { color: var(--sage); }
 
@@ -233,13 +234,9 @@
     .hero {
       padding: clamp(3.5rem, 9vw, 7rem) 0 clamp(3rem, 7vw, 5.5rem);
     }
-    .hero-eyebrow {
-      font-family: var(--sans);
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: var(--sage);
-      margin: 0 0 1.5rem;
-      max-width: 36rem;
+    .hero .hero-eyebrow {
+      margin-bottom: 1.5rem;
+      max-width: 40rem;
     }
     .hero h1 { margin-bottom: 1.5rem; max-width: 14ch; }
     .hero h1 .line2 { display: block; }
@@ -266,7 +263,9 @@
     section { padding: clamp(3.5rem, 8vw, 6.5rem) 0; }
     .divider { border: none; border-top: 1px solid var(--line); margin: 0; }
     .section-head { margin-bottom: clamp(2rem, 4vw, 3rem); max-width: 40rem; }
-    .section-head h2 { margin-bottom: 1.1rem; }
+    .section-head .section-label { margin-bottom: 0.85rem; }
+    .section-head h2 { margin-bottom: 1rem; }
+    .section-head .lede { margin-bottom: 0; }
 
     /* Why */
     .moves {
@@ -299,7 +298,7 @@
       margin-bottom: 0.5rem;
       line-height: 1.3;
     }
-    .moves p { margin: 0; color: var(--muted); font-size: 0.98rem; }
+    .moves p { margin: 0; color: var(--muted); }
 
     /* Lab / stats */
     .lab-grid {
@@ -334,7 +333,7 @@
     .stat dt {
       font-size: 0.75rem;
       font-weight: 600;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--sage);
       margin: 0;
@@ -342,7 +341,7 @@
     .stat dd {
       margin: 0;
       font-family: var(--serif);
-      font-size: 1.15rem;
+      font-size: 1.125rem;
       font-weight: 500;
       line-height: 1.4;
     }
@@ -356,13 +355,11 @@
     .callout .badge { margin-bottom: 1.1rem; }
     .callout h3 {
       color: var(--ivory);
-      font-size: clamp(1.45rem, 2.5vw, 1.85rem);
       margin-bottom: 0.85rem;
     }
     .callout p {
       color: rgba(240, 238, 224, 0.78);
       margin-bottom: 0;
-      font-size: 0.98rem;
     }
     .callout .when {
       margin-top: 1.15rem;
@@ -387,10 +384,9 @@
       border-top: 1px solid var(--line);
     }
     .card h3 { margin-bottom: 0.65rem; }
-    .card p { margin: 0; color: var(--muted); font-size: 0.98rem; }
+    .card p { margin: 0; color: var(--muted); }
     .note {
       margin-top: 2.25rem;
-      font-size: 0.98rem;
       color: var(--sage);
       font-style: italic;
       font-family: var(--serif);
@@ -573,7 +569,7 @@
       gap: 1rem 2rem;
       justify-content: space-between;
       align-items: flex-end;
-      font-size: 0.92rem;
+      font-size: 0.8125rem;
       color: var(--muted);
     }
     .footer-meta a { color: var(--gold); font-weight: 500; }
@@ -581,7 +577,7 @@
       margin-top: 1.5rem;
       padding-top: 1.5rem;
       border-top: 1px solid var(--line);
-      font-size: 0.82rem;
+      font-size: 0.8125rem;
       color: var(--muted);
       max-width: 42rem;
       line-height: 1.55;
@@ -654,13 +650,11 @@
     .story-block { margin-top: clamp(2rem, 4vw, 3rem); }
     .story-block .story-copy { max-width: 40rem; margin-bottom: 1.75rem; }
     .story-block .story-copy h3 {
-      font-size: clamp(1.45rem, 2.6vw, 1.9rem);
       margin-bottom: 0.65rem;
     }
     .story-block .story-copy p {
       margin: 0;
       color: var(--muted);
-      font-size: 1.02rem;
     }
     .story-photo {
       border-radius: 2px;
@@ -706,7 +700,7 @@
     .split-copy .human-line {
       font-family: var(--serif);
       font-style: italic;
-      font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+      font-size: clamp(1.25rem, 2vw, 1.5rem);
       line-height: 1.35;
       color: var(--navy);
       margin: 0 0 1rem;
@@ -746,7 +740,7 @@
       font-family: var(--serif);
       font-style: italic;
       font-weight: 500;
-      font-size: clamp(1.65rem, 4vw, 2.65rem);
+      font-size: clamp(1.5rem, 3.2vw, 2.25rem);
       line-height: 1.28;
       color: var(--ivory);
       letter-spacing: -0.01em;
@@ -858,7 +852,7 @@
 
     .photo-credit {
       margin: 1.25rem 0 0;
-      font-size: 0.7rem;
+      font-size: 0.8125rem;
       letter-spacing: 0.04em;
       color: rgba(14, 35, 46, 0.42);
       font-weight: 400;
@@ -926,7 +920,7 @@
         <div class="hero-copy">
           <p class="hero-eyebrow">An independent initiative · In collaboration with UAC, TOSLI &amp; Dignity.Us</p>
           <h1>Utah has the heart.<span class="line2">It needs the infrastructure.</span></h1>
-          <p class="lede">Investable Humanity Leadership Lab brings fifty executive and civic leaders into one room to practice dignity-centered leadership, trauma-informed systems thinking, and the kind of accountability that scales care without creating dependency.</p>
+          <p class="lede">Fifty executive and civic leaders. One Salt Lake City cohort. Four months of practice leading people as partners, so the care you fund and the teams you run get stronger on Monday.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#attend">Request a seat</a>
             <a class="btn btn-ghost" href="#partner">Partner with us</a>
@@ -999,7 +993,7 @@
           <div class="split-copy">
             <p class="section-label">Why it matters</p>
             <p class="human-line">Leadership gets clearer when someone is really listening.</p>
-            <p>IHLab makes room for the conversations that change how teams treat conflict, care, and accountability on Monday morning.</p>
+            <p>Better conversations under pressure. Cleaner accountability. Care that builds capacity instead of dependency.</p>
           </div>
         </div>
       </div>
@@ -1024,7 +1018,7 @@
             <img src="assets/photos/lounge-diverse.jpg" alt="Diverse workshop group with sticky-note wall and shared table" width="1000" height="750" loading="lazy" decoding="async" />
           </figure>
           <div class="lab-copy">
-            <p>IHLab convenes CEOs, executive directors, founders, and civic innovators for a four-month cohort at The Other Side Village. Each gathering pairs a focused talk with workshopping and table conversation led by Dignity Fellows. You leave with tools you can use Monday, and peers who know your work by name.</p>
+            <p>Eight biweekly sessions at The Other Side Village. A focused talk, then workshopping at tables with Dignity Fellows and peers who learn your work by name. You leave with tools for the next morning, and a network that stays after the last session.</p>
           </div>
         </div>
         <dl class="stats">
@@ -1066,20 +1060,20 @@
         <div class="section-head">
           <p class="section-label">What’s in the room</p>
           <h2>A taste of the labs. The full programs stay with the partners who built them.</h2>
-          <p class="lede">IHLab is intentionally light on proprietary curriculum. You experience a curated sampler from our collaborating partners, then decide what belongs inside your organization.</p>
+          <p class="lede">A curated taste of what our collaborating partners do best. Enough to feel the difference. Enough to decide what belongs inside your organization next.</p>
         </div>
         <div class="sampler-grid">
           <article class="card">
-            <h3>Dignity.Us</h3>
-            <p>The Dignity Index in practice: contempt down, constructive dialogue up.</p>
+            <h3>Utah Advocacy Coalition</h3>
+            <p>Systems connection, Dignity Fellow pipeline, and Cohort I administrative backbone.</p>
           </article>
           <article class="card">
             <h3>The Other Side Leadership Institute</h3>
             <p>Civic leadership infrastructure with lived experience at the center.</p>
           </article>
           <article class="card">
-            <h3>Utah Advocacy Coalition</h3>
-            <p>Systems connection, Dignity Fellow pipeline, and the administrative backbone for Cohort I.</p>
+            <h3>Dignity.Us</h3>
+            <p>The Dignity Index in practice: contempt down, constructive dialogue up.</p>
           </article>
         </div>
         <div class="photo-cards" aria-hidden="false">
@@ -1090,7 +1084,7 @@
             <img src="assets/photos/coffee-talk.jpg" alt="Small-group collaboration over coffee" width="900" height="700" loading="lazy" decoding="async" />
           </figure>
         </div>
-        <p class="note">Ideal next step after the sampler: bring a full partner program in-house (Dignity.Us, Trauma-Informed Utah, and more).</p>
+        <p class="note">After the sampler, many leaders bring a full partner program in-house: Dignity.Us, Trauma-Informed Utah, or another lab that fits their table.</p>
       </div>
     </section>
 
@@ -1129,10 +1123,10 @@
           <div>
             <p style="font-weight:600;margin-bottom:0.5rem;">Outcomes you’ll feel:</p>
             <ul class="outcomes">
-              <li>Dignity-indexed communication when stakes are high</li>
-              <li>Radical accountability without shame spirals</li>
-              <li>An applied capstone playbook, not a binder of theory</li>
-              <li>Peer access across nonprofit, business, and civic Utah</li>
+              <li>Clearer conflict when the stakes are high</li>
+              <li>Accountability that raises the bar without burning people out</li>
+              <li>A capstone playbook written for your organization</li>
+              <li>Peers across nonprofit, business, and civic Utah</li>
             </ul>
           </div>
         </div>
@@ -1172,7 +1166,7 @@
               </figure>
               <p class="section-label">Sit at the table</p>
               <h2>Invest in the people who carry this work forward.</h2>
-              <p class="lede">Corporate and philanthropic partners help open seats, shape Cohort I, and stand beside Utah’s next network of dignity-centered leaders. Tiers from a single scholarship seat to founding partnership. Details (including any tax treatment) confirmed with each partner based on final program structure.</p>
+              <p class="lede">Sit beside fifty of Utah’s consequential leaders while Cohort I takes shape. Open scholarship seats. Help steer the table. Contribution details, including any tax treatment, are confirmed with each partner.</p>
               <p style="margin:1.5rem 0 0;"><a class="btn btn-primary" href="mailto:alyssa@ihlab.us?subject=IHLab%20partnership%20inquiry">Talk with Alyssa</a></p>
             </div>
             <form class="form" action="mailto:alyssa@ihlab.us" method="get" enctype="text/plain" id="partner-form">
