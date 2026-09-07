@@ -311,30 +311,47 @@
     }
     .stats {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 0;
+      margin-top: 1.75rem;
       border-top: 1px solid var(--line);
     }
-    .stat {
-      padding: 1.35rem 1.25rem 1.35rem 0;
-      border-bottom: 1px solid var(--line);
+    @media (min-width: 640px) {
+      .stats {
+        grid-template-columns: minmax(7.5rem, 9.5rem) 1fr;
+      }
     }
-    .stat:nth-child(odd) { padding-right: 1.5rem; }
-    .stat:nth-child(even) { padding-left: 1.5rem; border-left: 1px solid var(--line); }
+    .stat {
+      display: grid;
+      grid-template-columns: subgrid;
+      grid-column: 1 / -1;
+      padding: 1.1rem 0;
+      border-bottom: 1px solid var(--line);
+      align-items: baseline;
+      gap: 0.35rem 1.5rem;
+    }
+    @media (max-width: 639px) {
+      .stat {
+        display: block;
+      }
+    }
     .stat dt {
       font-size: 0.75rem;
       font-weight: 600;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--sage);
-      margin-bottom: 0.4rem;
+      margin: 0;
+    }
+    @media (max-width: 639px) {
+      .stat dt { margin-bottom: 0.35rem; }
     }
     .stat dd {
       margin: 0;
       font-family: var(--serif);
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       font-weight: 500;
-      line-height: 1.35;
+      line-height: 1.4;
     }
 
     .callout {
@@ -1023,7 +1040,7 @@
                 <dt>Investment</dt>
                 <dd>$2,500 per participant</dd>
               </div>
-              <div class="stat" style="grid-column: 1 / -1; border-left: none; padding-left: 0;">
+              <div class="stat">
                 <dt>Launch</dt>
                 <dd>Cohort I · 2027</dd>
               </div>
