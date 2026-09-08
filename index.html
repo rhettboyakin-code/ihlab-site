@@ -15,11 +15,13 @@
       --navy: #0E232E;
       --sage: #556248;
       --ivory: #F0EEE0;
-      --gold: #A88428;
+      --gold: #A8842B;
       --coral: #C86A4F;
       --white: #FFFFFF;
       --line: rgba(14, 35, 46, 0.12);
+      --line-on-navy: rgba(240, 238, 224, 0.16);
       --muted: rgba(14, 35, 46, 0.62);
+      --muted-on-navy: rgba(240, 238, 224, 0.78);
       --max: 1120px;
       --pad: clamp(1.25rem, 4vw, 2.5rem);
       --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
@@ -65,7 +67,13 @@
     h2 { font-size: clamp(1.85rem, 3.8vw, 2.75rem); }
     h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
     p { margin: 0 0 1.15rem; }
-    .lede { font-size: 1.125rem; line-height: 1.65; color: var(--muted); max-width: 40rem; margin-bottom: 0; }
+    .lede {
+      font-size: 1.125rem;
+      line-height: 1.65;
+      color: var(--muted);
+      max-width: 40rem;
+      margin-bottom: 0;
+    }
     .section-label,
     .hero-eyebrow {
       font-family: var(--serif);
@@ -74,10 +82,14 @@
       letter-spacing: 0.2em;
       text-transform: uppercase;
       margin: 0 0 0.85rem;
+      color: var(--gold);
     }
-    .section-label { color: var(--sage); }
-    .hero-eyebrow { color: var(--gold); }
     .sage { color: var(--sage); }
+    .tagline {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 500;
+    }
 
     /* —— Buttons / badges —— */
     .btn {
@@ -94,11 +106,11 @@
       border-radius: 2px;
       cursor: pointer;
       text-decoration: none;
-      transition: transform .15s ease, opacity .2s ease, background .2s ease;
+      transition: transform .15s ease, opacity .2s ease, background .2s ease, border-color .2s ease;
     }
     .btn:hover { opacity: 1; transform: translateY(-1px); }
     .btn-primary { background: var(--gold); color: var(--navy); }
-    .btn-primary:hover { background: #b89230; }
+    .btn-primary:hover { background: #b89438; }
     .btn-ghost {
       background: transparent;
       color: var(--navy);
@@ -107,7 +119,7 @@
     .btn-ghost:hover { border-color: var(--navy); }
     .btn-on-dark.btn-ghost {
       color: var(--ivory);
-      border-color: rgba(240, 238, 224, 0.35);
+      border-color: rgba(240, 238, 224, 0.4);
     }
     .btn-on-dark.btn-ghost:hover { border-color: var(--ivory); }
     .badge {
@@ -119,7 +131,7 @@
       text-transform: uppercase;
       background: var(--coral);
       color: var(--white);
-      padding: 0.35rem 0.75rem;
+      padding: 0.4rem 0.85rem;
       border-radius: 999px;
     }
 
@@ -128,7 +140,7 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(240, 238, 224, 0.92);
+      background: rgba(240, 238, 224, 0.94);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--line);
@@ -197,12 +209,13 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 1.35rem;
+      gap: 1.25rem;
       list-style: none;
       margin: 0;
       padding: 0;
     }
     .nav-links a {
+      font-family: var(--sans);
       font-size: 0.875rem;
       font-weight: 500;
       color: var(--navy);
@@ -215,7 +228,7 @@
       border-radius: 2px;
       font-weight: 600;
     }
-    .nav-links .nav-cta:hover { opacity: 1; background: #b89230; }
+    .nav-links .nav-cta:hover { opacity: 1; background: #b89438; }
     .nav-toggle {
       display: none;
       background: none;
@@ -231,16 +244,56 @@
       cursor: pointer;
     }
 
-    /* —— Hero —— */
+    /* —— Section bands —— */
+    section { padding: clamp(3.5rem, 8vw, 6.5rem) 0; }
+    .band-ivory { background: var(--ivory); }
+    .band-navy {
+      background: var(--navy);
+      color: var(--ivory);
+    }
+    .band-navy h1,
+    .band-navy h2,
+    .band-navy h3 { color: var(--ivory); }
+    .band-navy .lede,
+    .band-navy p { color: var(--muted-on-navy); }
+    .band-navy .section-label { color: var(--gold); }
+    .band-navy .muted-body { color: var(--muted-on-navy); }
+    .divider { border: none; border-top: 1px solid var(--line); margin: 0; }
+    .section-head { margin-bottom: clamp(2rem, 4vw, 3rem); max-width: 40rem; }
+    .section-head .section-label { margin-bottom: 0.85rem; }
+    .section-head h2 { margin-bottom: 1rem; }
+    .section-head .lede { margin-bottom: 0; }
+
+    /* —— Hero (Final2 navy guide pattern) —— */
     .hero {
-      padding: clamp(3.5rem, 9vw, 7rem) 0 clamp(3rem, 7vw, 5.5rem);
+      padding: clamp(4rem, 10vw, 7.5rem) 0 clamp(3.5rem, 8vw, 6rem);
+      background: var(--navy);
+      color: var(--ivory);
     }
-    .hero .hero-eyebrow {
+    .hero .badge { margin-bottom: 1.35rem; }
+    .hero h1 {
+      color: var(--ivory);
       margin-bottom: 1.5rem;
-      max-width: 40rem;
+      max-width: 16ch;
     }
-    .hero h1 { margin-bottom: 1.5rem; max-width: 14ch; }
     .hero h1 .line2 { display: block; }
+    .hero .lede {
+      color: var(--muted-on-navy);
+      max-width: 38rem;
+    }
+    .hero-eyebrow-row {
+      margin-bottom: 1.75rem;
+    }
+    .hero-collab {
+      margin: 0 0 0;
+      font-family: var(--serif);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(240, 238, 224, 0.55);
+      max-width: 42rem;
+    }
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
@@ -253,27 +306,15 @@
       align-items: center;
       gap: 0.65rem 1.25rem;
       padding-top: 1.75rem;
-      border-top: 1px solid var(--line);
+      border-top: 1px solid var(--line-on-navy);
       font-size: 0.9rem;
       font-weight: 500;
-      color: var(--muted);
+      color: rgba(240, 238, 224, 0.7);
     }
     .proof span { white-space: nowrap; }
-    .proof .dot { color: rgba(14, 35, 46, 0.28); }
-    .proof .badge {
-      margin-right: 0.15rem;
-      vertical-align: middle;
-    }
+    .proof .dot { color: rgba(240, 238, 224, 0.35); }
 
-    /* —— Sections —— */
-    section { padding: clamp(3.5rem, 8vw, 6.5rem) 0; }
-    .divider { border: none; border-top: 1px solid var(--line); margin: 0; }
-    .section-head { margin-bottom: clamp(2rem, 4vw, 3rem); max-width: 40rem; }
-    .section-head .section-label { margin-bottom: 0.85rem; }
-    .section-head h2 { margin-bottom: 1rem; }
-    .section-head .lede { margin-bottom: 0; }
-
-    /* Why */
+    /* Why / moves */
     .moves {
       list-style: none;
       margin: 2.5rem 0 0;
@@ -306,13 +347,101 @@
     }
     .moves p { margin: 0; color: var(--muted); }
 
+    /* Support photo (restrained) */
+    .support-photo {
+      margin: clamp(2.5rem, 5vw, 3.5rem) 0 0;
+      border-radius: 2px;
+      overflow: hidden;
+      aspect-ratio: 21 / 9;
+      min-height: 12rem;
+      max-width: 100%;
+    }
+    @media (max-width: 700px) {
+      .support-photo { aspect-ratio: 16 / 10; }
+    }
+    .support-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Human split */
+    .split {
+      display: grid;
+      gap: clamp(1.75rem, 4vw, 3.25rem);
+      align-items: center;
+    }
+    @media (min-width: 860px) {
+      .split { grid-template-columns: 0.9fr 1.1fr; gap: clamp(2.5rem, 5vw, 4rem); }
+    }
+    .split-media {
+      border-radius: 2px;
+      overflow: hidden;
+      aspect-ratio: 4 / 5;
+      max-height: 28rem;
+    }
+    .split-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .split-copy .human-line {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+      line-height: 1.35;
+      color: var(--navy);
+      margin: 0 0 1rem;
+      max-width: 22ch;
+    }
+    .split-copy p { color: var(--muted); margin: 0; max-width: 34rem; }
+
+    /* Navy pull quote (replaces full-bleed photo identity) */
+    .quote-band {
+      background: var(--navy);
+      padding: clamp(3.5rem, 8vw, 5.5rem) 0;
+      text-align: center;
+    }
+    .quote-band blockquote {
+      margin: 0 auto;
+      max-width: 20ch;
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 500;
+      font-size: clamp(1.5rem, 3.2vw, 2.25rem);
+      line-height: 1.28;
+      color: var(--ivory);
+      letter-spacing: -0.01em;
+    }
+
     /* Lab / stats */
     .lab-grid {
       display: grid;
       gap: 2.5rem;
+      margin-bottom: clamp(2rem, 4vw, 2.75rem);
+      align-items: start;
     }
     @media (min-width: 900px) {
-      .lab-grid { grid-template-columns: 1.15fr 0.85fr; align-items: start; gap: 3.5rem; }
+      .lab-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+        gap: 3.25rem;
+      }
+    }
+    .lab-photo {
+      margin: 0;
+      border-radius: 2px;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      background: rgba(14, 35, 46, 0.06);
+    }
+    .lab-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 40% 50%;
+      display: block;
     }
     .stats {
       display: flex;
@@ -322,6 +451,7 @@
       max-width: 40rem;
       border-top: 1px solid var(--line);
     }
+    .band-navy .stats { border-top-color: var(--line-on-navy); }
     .stat {
       display: grid;
       grid-template-columns: 8.75rem 1fr;
@@ -330,11 +460,9 @@
       border-bottom: 1px solid var(--line);
       align-items: baseline;
     }
+    .band-navy .stat { border-bottom-color: var(--line-on-navy); }
     @media (max-width: 520px) {
-      .stat {
-        grid-template-columns: 1fr;
-        gap: 0.3rem;
-      }
+      .stat { grid-template-columns: 1fr; gap: 0.3rem; }
     }
     .stat dt {
       font-size: 0.75rem;
@@ -343,20 +471,26 @@
       text-transform: uppercase;
       color: var(--sage);
       margin: 0;
+      font-family: var(--sans);
     }
+    .band-navy .stat dt { color: rgba(240, 238, 224, 0.55); }
     .stat dd {
       margin: 0;
       font-family: var(--serif);
       font-size: 1.125rem;
       font-weight: 500;
       line-height: 1.4;
+      color: var(--navy);
     }
+    .band-navy .stat dd { color: var(--ivory); }
 
     .callout {
-      background: var(--navy);
+      background: rgba(240, 238, 224, 0.06);
+      border: 1px solid var(--line-on-navy);
       color: var(--ivory);
       padding: clamp(1.75rem, 3.5vw, 2.35rem);
       border-radius: 2px;
+      max-width: 36rem;
     }
     .callout .badge { margin-bottom: 1.1rem; }
     .callout h3 {
@@ -364,17 +498,89 @@
       margin-bottom: 0.85rem;
     }
     .callout p {
-      color: rgba(240, 238, 224, 0.78);
+      color: var(--muted-on-navy);
       margin-bottom: 0;
     }
     .callout .when {
       margin-top: 1.15rem;
       padding-top: 1.15rem;
-      border-top: 1px solid rgba(240, 238, 224, 0.15);
+      border-top: 1px solid var(--line-on-navy);
       font-weight: 500;
       color: var(--ivory);
       font-size: 0.92rem;
     }
+
+    /* Pitch / People Pitch — relationship copy + optional single sign */
+    .pitch-layout {
+      display: grid;
+      gap: 2rem;
+      margin-top: 0.5rem;
+      align-items: start;
+    }
+    @media (min-width: 880px) {
+      .pitch-layout {
+        grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.75fr);
+        gap: 2.75rem;
+        align-items: center;
+      }
+    }
+    .pitch-points {
+      margin: 1.25rem 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 1rem;
+      max-width: 36rem;
+    }
+    .pitch-points li {
+      margin: 0;
+      padding: 0 0 0 1rem;
+      border-left: 2px solid var(--gold);
+      color: var(--muted-on-navy);
+      font-size: 1rem;
+      line-height: 1.55;
+    }
+    .pitch-points strong {
+      display: block;
+      color: var(--ivory);
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+    }
+    .pitch-sign {
+      margin: 0;
+      max-width: 16rem;
+      justify-self: start;
+      background: var(--white);
+      border-radius: 2px;
+      overflow: hidden;
+      border: 1px solid var(--line-on-navy);
+    }
+    @media (min-width: 880px) {
+      .pitch-sign { justify-self: end; }
+    }
+    .pitch-sign img {
+      width: 100%;
+      height: auto;
+      display: block;
+      aspect-ratio: 3 / 4;
+      object-fit: contain;
+      background: var(--white);
+      padding: 0.65rem;
+    }
+    .pitch-sign figcaption {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted-on-navy);
+      padding: 0.65rem 0.75rem 0.85rem;
+      background: transparent;
+    }
+    .band-navy .pitch-sign figcaption { color: rgba(240, 238, 224, 0.55); }
 
     /* Sampler */
     .sampler-grid {
@@ -389,8 +595,10 @@
       padding: 1.75rem 0 0;
       border-top: 1px solid var(--line);
     }
+    .band-navy .card { border-top-color: var(--line-on-navy); }
     .card h3 { margin-bottom: 0.65rem; }
     .card p { margin: 0; color: var(--muted); }
+    .band-navy .card p { color: var(--muted-on-navy); }
     .note {
       margin-top: 2.25rem;
       color: var(--sage);
@@ -420,6 +628,10 @@
       align-items: center;
       justify-content: center;
     }
+    .band-navy .partner-item {
+      background: rgba(240, 238, 224, 0.06);
+      border: 1px solid var(--line-on-navy);
+    }
     .partner-item strong {
       font-family: var(--serif);
       font-size: 1.2rem;
@@ -446,6 +658,7 @@
       color: var(--sage);
       text-align: center;
     }
+    .band-navy .partners-tagline { color: rgba(240, 238, 224, 0.7); }
 
     /* Why attend */
     .outcomes {
@@ -469,8 +682,33 @@
       top: 0.55rem;
       width: 7px;
       height: 7px;
-      background: var(--coral);
+      background: var(--sage);
       border-radius: 50%;
+    }
+    .attend-split {
+      display: grid;
+      gap: 2.5rem;
+      margin-bottom: 2.75rem;
+    }
+    @media (min-width: 860px) {
+      .attend-split {
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: 3.25rem;
+        align-items: start;
+      }
+    }
+    .attend-photo {
+      border-radius: 2px;
+      overflow: hidden;
+      aspect-ratio: 5 / 4;
+      min-height: 12rem;
+    }
+    .attend-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
     }
 
     /* Partner / form */
@@ -489,6 +727,20 @@
     }
     @media (min-width: 860px) {
       .panel-grid { grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+    }
+    .partner-visual {
+      margin-bottom: 1.75rem;
+      border-radius: 2px;
+      overflow: hidden;
+      aspect-ratio: 16 / 10;
+      max-width: 28rem;
+    }
+    .partner-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
     }
     .form {
       display: grid;
@@ -535,7 +787,6 @@
       margin-top: 0.25rem;
     }
 
-    /* Attend section form light */
     .interest-light {
       margin-top: 2rem;
       max-width: 32rem;
@@ -572,6 +823,7 @@
     .footer {
       padding: clamp(3rem, 6vw, 4.5rem) 0 2.5rem;
       border-top: 1px solid var(--line);
+      background: var(--ivory);
     }
     .footer-quote {
       font-family: var(--serif);
@@ -580,6 +832,7 @@
       line-height: 1.3;
       max-width: 22ch;
       margin: 0 0 2.5rem;
+      color: var(--navy);
     }
     .footer-meta {
       display: flex;
@@ -600,274 +853,6 @@
       max-width: 42rem;
       line-height: 1.55;
     }
-
-    /* —— Photographic warmth (Saprea cues, IHLab tokens) —— */
-    .soft-fade {
-      position: relative;
-      overflow: hidden;
-      border-radius: 2px;
-    }
-    .soft-fade img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .soft-fade--left::before {
-      content: "";
-      position: absolute;
-      inset: 0 auto 0 0;
-      width: 28%;
-      z-index: 1;
-      pointer-events: none;
-      background: linear-gradient(90deg, var(--ivory) 0%, rgba(240,238,224,0) 100%);
-    }
-    .soft-fade--bottom::after {
-      content: "";
-      position: absolute;
-      inset: auto 0 0 0;
-      height: 22%;
-      z-index: 1;
-      pointer-events: none;
-      background: linear-gradient(0deg, var(--ivory) 0%, rgba(240,238,224,0) 100%);
-    }
-
-    .hero-grid {
-      display: grid;
-      gap: clamp(2rem, 4vw, 3.5rem);
-      align-items: center;
-    }
-    @media (min-width: 900px) {
-      .hero-grid {
-        grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-        gap: clamp(2.5rem, 5vw, 4rem);
-      }
-      .hero-copy { padding-right: 0.5rem; }
-      .hero-photo {
-        min-height: clamp(22rem, 42vw, 32rem);
-        align-self: stretch;
-      }
-      .hero h1 { max-width: 12ch; }
-    }
-    @media (max-width: 899px) {
-      .hero-photo {
-        order: 2;
-        aspect-ratio: 4 / 3;
-        max-height: 22rem;
-      }
-      .hero-copy { order: 1; }
-      .soft-fade--left::before { width: 18%; }
-    }
-    .hero-photo img { object-position: 50% 35%; }
-
-    .band-sage {
-      background: #E8E9DF; /* pale sage-tinted ivory — not Saprea green */
-    }
-    .band-plain { background: var(--ivory); }
-
-    .story-block { margin-top: clamp(2rem, 4vw, 3rem); }
-    .story-block .story-copy { max-width: 40rem; margin-bottom: 1.75rem; }
-    .story-block .story-copy h3 {
-      margin-bottom: 0.65rem;
-    }
-    .story-block .story-copy p {
-      margin: 0;
-      color: var(--muted);
-    }
-    .story-photo {
-      border-radius: 2px;
-      overflow: hidden;
-      aspect-ratio: 21 / 9;
-      min-height: 14rem;
-    }
-    @media (max-width: 700px) {
-      .story-photo { aspect-ratio: 16 / 10; }
-    }
-    .story-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .split {
-      display: grid;
-      gap: clamp(1.75rem, 4vw, 3.25rem);
-      align-items: center;
-    }
-    @media (min-width: 860px) {
-      .split { grid-template-columns: 1fr 1fr; gap: clamp(2.5rem, 5vw, 4rem); }
-      .split--flip .split-media { order: 2; }
-      .split--flip .split-copy { order: 1; }
-    }
-    .split-media {
-      border-radius: 2px;
-      overflow: hidden;
-      aspect-ratio: 4 / 5;
-      max-height: 34rem;
-    }
-    @media (min-width: 860px) {
-      .split-media { aspect-ratio: 4 / 5; min-height: 26rem; }
-    }
-    .split-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .split-copy .human-line {
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: clamp(1.25rem, 2vw, 1.5rem);
-      line-height: 1.35;
-      color: var(--navy);
-      margin: 0 0 1rem;
-      max-width: 22ch;
-    }
-    .split-copy p { color: var(--muted); margin: 0; max-width: 34rem; }
-
-    .photo-band {
-      position: relative;
-      min-height: clamp(22rem, 48vw, 32rem);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      padding: clamp(3rem, 8vw, 6rem) var(--pad);
-    }
-    .photo-band__img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 40%;
-    }
-    .photo-band__overlay {
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(180deg, rgba(14,35,46,0.55) 0%, rgba(14,35,46,0.42) 45%, rgba(14,35,46,0.62) 100%);
-    }
-    .photo-band__quote {
-      position: relative;
-      z-index: 1;
-      margin: 0;
-      max-width: 18ch;
-      text-align: center;
-      font-family: var(--serif);
-      font-style: italic;
-      font-weight: 500;
-      font-size: clamp(1.5rem, 3.2vw, 2.25rem);
-      line-height: 1.28;
-      color: var(--ivory);
-      letter-spacing: -0.01em;
-    }
-
-    .lab-media-grid {
-      display: grid;
-      gap: 2.5rem;
-      margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
-      align-items: start;
-    }
-    @media (min-width: 900px) {
-      .lab-media-grid {
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-        gap: 3.25rem;
-      }
-    }
-    .lab-copy {
-      min-width: 0;
-    }
-    .lab-copy > p {
-      margin-top: 0;
-    }
-    .lab-photo {
-      margin: 0;
-      border-radius: 2px;
-      overflow: hidden;
-      min-width: 0;
-      min-height: 16rem;
-      aspect-ratio: 4 / 3;
-      background: rgba(14, 35, 46, 0.06);
-    }
-    .lab-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: 40% 50%;
-      display: block;
-    }
-
-    .attend-split {
-      display: grid;
-      gap: 2.5rem;
-      margin-bottom: 2.75rem;
-    }
-    @media (min-width: 860px) {
-      .attend-split {
-        grid-template-columns: 0.95fr 1.05fr;
-        gap: 3.25rem;
-        align-items: start;
-      }
-    }
-    .attend-photo {
-      border-radius: 2px;
-      overflow: hidden;
-      aspect-ratio: 5 / 4;
-      min-height: 14rem;
-    }
-    .attend-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 30%;
-      display: block;
-    }
-
-    .photo-cards {
-      display: grid;
-      gap: 1.25rem;
-      margin-top: 2.5rem;
-    }
-    @media (min-width: 768px) {
-      .photo-cards { grid-template-columns: 1.1fr 0.9fr; gap: 1.5rem; }
-    }
-    .photo-card {
-      border-radius: 2px;
-      overflow: hidden;
-      position: relative;
-      min-height: 14rem;
-      border-top: 1px solid var(--line);
-      padding-top: 0;
-    }
-    .photo-card img {
-      width: 100%;
-      height: 100%;
-      min-height: 14rem;
-      object-fit: cover;
-      display: block;
-    }
-    .photo-card--tall { min-height: 18rem; }
-    @media (min-width: 768px) {
-      .photo-card--tall { min-height: 100%; }
-    }
-
-    .partner-visual {
-      margin-bottom: 1.75rem;
-      border-radius: 2px;
-      overflow: hidden;
-      aspect-ratio: 16 / 10;
-      max-width: 28rem;
-    }
-    .partner-visual img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 30%;
-      display: block;
-    }
-
     .photo-credit {
       margin: 1.25rem 0 0;
       font-size: 0.8125rem;
@@ -877,7 +862,7 @@
     }
 
     /* Mobile nav */
-    @media (max-width: 860px) {
+    @media (max-width: 960px) {
       .nav-toggle { display: inline-flex; }
       .nav-links {
         display: none;
@@ -924,6 +909,7 @@
       <ul class="nav-links" id="nav-menu">
         <li><a href="#why">Why</a></li>
         <li><a href="#lab">The Lab</a></li>
+        <li><a href="#pitch">People Pitch</a></li>
         <li><a href="#partners">Partners</a></li>
         <li><a href="#attend">Attend</a></li>
         <li><a class="nav-cta" href="#partner">Partner with us</a></li>
@@ -932,36 +918,33 @@
   </header>
 
   <main id="top">
-    <!-- Hero -->
-    <section class="hero band-plain">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <p class="hero-eyebrow">An independent initiative · In collaboration with UAC, TOSLI &amp; Dignity.Us</p>
-          <h1>Utah has the heart.<span class="line2">It needs the infrastructure.</span></h1>
-          <p class="lede">Fifty executive and civic leaders. One Salt Lake City cohort. Four months of practice leading people as partners, so the care you fund and the teams you run get stronger on Monday.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#attend">Request a seat</a>
-            <a class="btn btn-ghost" href="#partner">Partner with us</a>
-          </div>
-          <div class="proof" aria-label="Cohort at a glance">
-            <span class="badge">Founding Cohort 2027</span>
-            <span>50 leaders</span>
-            <span class="dot" aria-hidden="true">·</span>
-            <span>8 sessions</span>
-            <span class="dot" aria-hidden="true">·</span>
-            <span>Salt Lake City</span>
-          </div>
+    <!-- Hero: Final2 navy guide pattern -->
+    <section class="hero" aria-label="Introduction">
+      <div class="wrap">
+        <div class="hero-eyebrow-row">
+          <span class="badge">Founding Cohort</span>
+          <p class="hero-collab">An independent initiative · In collaboration with UAC, TOSLI &amp; Dignity.Us</p>
         </div>
-        <figure class="hero-photo soft-fade soft-fade--left soft-fade--bottom" aria-label="Leaders in conversation over coffee">
-          <img src="assets/photos/coffee-talk.jpg" alt="Four colleagues smiling and collaborating around a café table" width="900" height="1100" loading="eager" decoding="async" />
-        </figure>
+        <h1>Utah has the heart.<span class="line2">It needs the infrastructure.</span></h1>
+        <p class="lede">Fifty executive and civic leaders. One Salt Lake City cohort. Four months of practice leading people as partners, so the care you fund and the teams you run get stronger on Monday.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#attend">Request a seat</a>
+          <a class="btn btn-ghost btn-on-dark" href="#partner">Partner with us</a>
+        </div>
+        <div class="proof" aria-label="Cohort at a glance">
+          <span>Founding Cohort 2027</span>
+          <span class="dot" aria-hidden="true">·</span>
+          <span>50 leaders</span>
+          <span class="dot" aria-hidden="true">·</span>
+          <span>8 sessions</span>
+          <span class="dot" aria-hidden="true">·</span>
+          <span>Salt Lake City</span>
+        </div>
       </div>
     </section>
 
-    <hr class="divider wrap" />
-
-    <!-- Why now -->
-    <section id="why" class="band-sage">
+    <!-- Why now (ivory) -->
+    <section id="why" class="band-ivory">
       <div class="wrap">
         <div class="section-head">
           <p class="section-label">The opportunity</p>
@@ -986,22 +969,14 @@
             <p>Line up money, people, and mission so care helps people grow.</p>
           </li>
         </ol>
-
-        <div class="story-block">
-          <div class="story-copy">
-            <p class="section-label">In the room</p>
-            <h3>Practice happens face to face.</h3>
-            <p>Tables, not webinars. Peers who learn your work by name and stay with you after the cohort ends.</p>
-          </div>
-          <figure class="story-photo">
-            <img src="assets/photos/roundtable.jpg" alt="Leaders in workshop dialogue around a shared table" width="1400" height="600" loading="lazy" decoding="async" />
-          </figure>
-        </div>
+        <figure class="support-photo">
+          <img src="assets/photos/roundtable.jpg" alt="Leaders in workshop dialogue around a shared table" width="1400" height="600" loading="lazy" decoding="async" />
+        </figure>
       </div>
     </section>
 
-    <!-- Human split after Why -->
-    <section class="band-plain" aria-label="Human connection">
+    <!-- Human split (navy accents via quote follows; this stays ivory support) -->
+    <section class="band-ivory" aria-label="Human connection" style="padding-top:0;">
       <div class="wrap">
         <div class="split">
           <figure class="split-media">
@@ -1016,25 +991,25 @@
       </div>
     </section>
 
-    <!-- Full-bleed emotional band -->
-    <aside class="photo-band" aria-label="Pull quote">
-      <img class="photo-band__img" src="assets/photos/friends-circle.jpg" alt="Friends linked arm-in-arm looking out toward the horizon" width="1600" height="900" loading="lazy" decoding="async" />
-      <div class="photo-band__overlay" aria-hidden="true"></div>
-      <blockquote class="photo-band__quote">The earliest investment pays the greatest dividends.</blockquote>
+    <!-- Navy pull quote -->
+    <aside class="quote-band" aria-label="Pull quote">
+      <div class="wrap">
+        <blockquote>The earliest investment pays the greatest dividends.</blockquote>
+      </div>
     </aside>
 
-    <!-- The Lab -->
-    <section id="lab" class="band-sage">
+    <!-- The Lab (ivory) -->
+    <section id="lab" class="band-ivory">
       <div class="wrap">
         <div class="section-head">
           <p class="section-label">A premium cohort experience</p>
           <h2>Eight sessions. Real takeaways. A network that stays.</h2>
         </div>
-        <div class="lab-media-grid">
+        <div class="lab-grid">
           <figure class="lab-photo">
             <img src="assets/photos/lounge-diverse.jpg" alt="Diverse workshop group with sticky-note wall and shared table" width="1000" height="750" loading="lazy" decoding="async" />
           </figure>
-          <div class="lab-copy">
+          <div>
             <p>Eight biweekly sessions at The Other Side Village. A focused talk, then workshopping at tables with Dignity Fellows and peers who learn your work by name. You leave with tools for the next morning, and a network that stays after the last session.</p>
           </div>
         </div>
@@ -1060,7 +1035,7 @@
             <dd>Cohort I · 2027</dd>
           </div>
         </dl>
-        <aside class="callout" aria-label="Launch luncheon" style="max-width: 36rem;">
+        <aside class="callout" aria-label="Launch luncheon" style="background:var(--navy);border:none;">
           <span class="badge">Nov 3 · 2026</span>
           <h3>Inaugural launch luncheon</h3>
           <p>With Dr. Timothy Shriver, who helped create the Dignity Index.</p>
@@ -1069,10 +1044,39 @@
       </div>
     </section>
 
-    <hr class="divider wrap" />
+    <!-- People Pitch (navy band chrome; posters keep native art) -->
+    <section id="pitch" class="band-navy">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="section-label">People Pitch</p>
+          <h2>The Voice pillar that feeds this room.</h2>
+          <p class="lede">People Pitch is UAC’s community platform — Voice in the Trifecta beside IHLab (Heart) and CLPHI (Mind). It is how trained Dignity Fellows reach the tables, and how funding-narrative craft enters the curriculum. Distinct brand. Shared pipeline.</p>
+        </div>
+        <div class="pitch-layout">
+          <ul class="pitch-points">
+            <li>
+              <strong>Fellow pipeline</strong>
+              UAC’s People Pitch platform is the path for Dignity Fellows who help guide small-group practice in the Lab.
+            </li>
+            <li>
+              <strong>Curriculum DNA</strong>
+              Later sessions draw on funding-narrative insights developed through People Pitch — partnership language, not pity language.
+            </li>
+            <li>
+              <strong>Sister brand, not twin</strong>
+              IHLab stays the premium Heart flagship. People Pitch keeps its own voice; we don’t dress this site in Pitch yellow and blue.
+            </li>
+          </ul>
+          <figure class="pitch-sign">
+            <img src="assets/pitch/2.png" alt="People Pitch Power Up Reunion directional A-frame (event signage)" width="864" height="1152" loading="lazy" decoding="async" />
+            <figcaption>Event signage · Power Up Reunion</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
 
-    <!-- Sampler -->
-    <section id="sampler" class="band-plain">
+    <!-- Sampler (ivory) -->
+    <section id="sampler" class="band-ivory">
       <div class="wrap">
         <div class="section-head">
           <p class="section-label">What’s in the room</p>
@@ -1093,22 +1097,12 @@
             <p>The Dignity Index in action: less contempt, better conversation when it counts.</p>
           </article>
         </div>
-        <div class="photo-cards" aria-hidden="false">
-          <figure class="photo-card photo-card--tall">
-            <img src="assets/photos/roundtable.jpg" alt="Workshop dialogue at a round table" width="900" height="1100" loading="lazy" decoding="async" />
-          </figure>
-          <figure class="photo-card">
-            <img src="assets/photos/coffee-talk.jpg" alt="Small-group collaboration over coffee" width="900" height="700" loading="lazy" decoding="async" />
-          </figure>
-        </div>
         <p class="note">After the sampler, many leaders bring a full partner program inside their organization: Dignity.Us, Trauma-Informed Utah, or another lab that fits their team.</p>
       </div>
     </section>
 
-    <hr class="divider wrap" />
-
-    <!-- Collaborating Partners -->
-    <section id="partners" class="band-sage">
+    <!-- Collaborating Partners (navy) -->
+    <section id="partners" class="band-navy">
       <div class="wrap">
         <div class="section-head" style="text-align:center;margin-inline:auto;">
           <p class="section-label">In collaboration with</p>
@@ -1123,10 +1117,8 @@
       </div>
     </section>
 
-    <hr class="divider wrap" />
-
-    <!-- Why attend -->
-    <section id="attend" class="band-plain">
+    <!-- Why attend (ivory) -->
+    <section id="attend" class="band-ivory">
       <div class="wrap">
         <div class="section-head">
           <p class="section-label">Who this is for</p>
@@ -1172,8 +1164,8 @@
       </div>
     </section>
 
-    <!-- Partner with us -->
-    <section id="partner" class="band-sage">
+    <!-- Partner with us (ivory shell + navy panel) -->
+    <section id="partner" class="band-ivory">
       <div class="wrap">
         <div class="panel">
           <div class="panel-grid">
@@ -1231,7 +1223,7 @@
         <div>© <span id="year">2026</span> Investable Humanity Leadership Lab</div>
       </div>
       <p class="footer-legal">An independent initiative · In collaboration with Utah Advocacy Coalition, The Other Side Leadership Institute, and Dignity.Us</p>
-      <p class="photo-credit">Photos via Unsplash (stock placeholders until IHLab shoot).</p>
+      <p class="photo-credit">Photos via Unsplash (stock placeholders until IHLab shoot). Pitch posters: People Pitch Power Up Reunion A-frames.</p>
     </div>
   </footer>
 
