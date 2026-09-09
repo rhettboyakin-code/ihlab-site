@@ -587,6 +587,25 @@
       text-align: center;
     }
     .band-navy .partners-tagline { color: rgba(240, 238, 224, 0.7); }
+    .launch-band {
+      text-align: center;
+      max-width: 40rem;
+      margin-inline: auto;
+    }
+    .launch-band .badge { margin-bottom: 1.25rem; }
+    .launch-band .section-label { margin-bottom: 0.85rem; }
+    .launch-band h2 { color: var(--ivory); margin-bottom: 1rem; }
+    .launch-band .lede {
+      margin-inline: auto;
+      margin-bottom: 0.75rem;
+      color: var(--muted-on-navy);
+    }
+    .launch-when {
+      margin: 0 0 1.75rem;
+      font-weight: 500;
+      color: rgba(240, 238, 224, 0.85);
+    }
+    .launch-band .partners-tagline { margin-bottom: 0; }
 
     /* Why attend */
     .outcomes {
@@ -829,6 +848,7 @@
         <li><a href="#why">Why</a></li>
         <li><a href="#lab">The Lab</a></li>
         <li><a href="#partners">Partners</a></li>
+        <li><a href="#launch">Launch</a></li>
         <li><a href="#attend">Attend</a></li>
         <li><a class="nav-cta" href="#partner">Partner with us</a></li>
       </ul>
@@ -952,18 +972,12 @@
             <dd>Cohort I · 2027</dd>
           </div>
         </dl>
-        <aside class="callout" aria-label="Launch luncheon" style="background:var(--navy);border:none;">
-          <span class="badge">Nov 3 · 2026</span>
-          <h3>Inaugural launch luncheon</h3>
-          <p>With Dr. Timothy Shriver, who helped create the Dignity Index.</p>
-          <p class="when">University of Utah · November 3, 2026</p>
-        </aside>
       </div>
     </section>
 
 
-    <!-- Sampler (ivory) -->
-    <section id="sampler" class="band-ivory">
+    <!-- Partners (ivory) — single section with linked org cards -->
+    <section id="partners" class="band-ivory">
       <div class="wrap">
         <div class="section-head">
           <p class="section-label">Built with partners</p>
@@ -988,18 +1002,14 @@
       </div>
     </section>
 
-    <!-- Collaborating Partners (navy) -->
-    <section id="partners" class="band-navy">
-      <div class="wrap">
-        <div class="section-head" style="text-align:center;margin-inline:auto;">
-          <p class="section-label">In collaboration with</p>
-          <h2>The three organizations at the table</h2>
-        </div>
-        <ul class="partners-list">
-          <li class="partner-item"><strong><a href="https://utahadvocacy.org" target="_blank" rel="noopener noreferrer">Utah Advocacy Coalition</a></strong></li>
-          <li class="partner-item"><strong><a href="https://theothersidevillage.com/the-other-side-leadership-institute/" target="_blank" rel="noopener noreferrer">The Other Side Leadership Institute</a></strong></li>
-          <li class="partner-item"><strong><a href="https://dignity.us" target="_blank" rel="noopener noreferrer">Dignity.Us</a></strong></li>
-        </ul>
+    <!-- Launch luncheon (forest) — earns the dark band with a specific date -->
+    <section id="launch" class="band-navy">
+      <div class="wrap launch-band">
+        <span class="badge">Nov 3 · 2026</span>
+        <p class="section-label">Save the date</p>
+        <h2>Inaugural launch luncheon</h2>
+        <p class="lede">With Dr. Timothy Shriver, who helped create the Dignity Index.</p>
+        <p class="launch-when">University of Utah · November 3, 2026</p>
         <p class="partners-tagline">Independent initiative. Shared table.</p>
       </div>
     </section>
