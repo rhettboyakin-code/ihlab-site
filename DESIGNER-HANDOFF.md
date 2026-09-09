@@ -1,3 +1,4 @@
+<!-- v3.1: restored Final2 deep hero (forest) after ivory over-correction -->
 # IHLab homepage — designer handoff (v3 · Alyssa feedback)
 
 ## NOTES — v3 light hero + forest deep + drop People Pitch
