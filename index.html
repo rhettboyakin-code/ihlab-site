@@ -4,23 +4,23 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Investable Humanity Leadership Lab · IHLab</title>
-  <meta name="description" content="IHLab brings fifty executive and civic leaders into one room to practice dignity-centered leadership, trauma-informed systems thinking, and accountability that scales care." />
-  <meta name="theme-color" content="#0E232E" />
+  <meta name="description" content="Investable Humanity Leadership Lab: fifty Utah executive and civic leaders, eight sessions at The Other Side Village, practicing dignity-centered leadership with UAC, TOSLI, and Dignity.Us." />
+  <meta name="theme-color" content="#1F3328" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,500;0,600;1,500;1,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="icon" href="assets/ihlab-mark.svg" type="image/svg+xml" />
   <style>
     :root {
-      --navy: #0E232E;
+      --navy: #1F3328; /* deep forest (token name kept) */
       --sage: #556248;
       --ivory: #F0EEE0;
       --gold: #A8842B;
       --coral: #C86A4F;
       --white: #FFFFFF;
-      --line: rgba(14, 35, 46, 0.12);
+      --line: rgba(31, 51, 40, 0.12);
       --line-on-navy: rgba(240, 238, 224, 0.16);
-      --muted: rgba(14, 35, 46, 0.62);
+      --muted: rgba(31, 51, 40, 0.62);
       --muted-on-navy: rgba(240, 238, 224, 0.78);
       --max: 1120px;
       --pad: clamp(1.25rem, 4vw, 2.5rem);
@@ -114,7 +114,7 @@
     .btn-ghost {
       background: transparent;
       color: var(--navy);
-      border: 1px solid rgba(14, 35, 46, 0.28);
+      border: 1px solid rgba(31, 51, 40, 0.28);
     }
     .btn-ghost:hover { border-color: var(--navy); }
     .btn-on-dark.btn-ghost {
@@ -188,7 +188,7 @@
       content: "";
       flex: 1;
       height: 1px;
-      background: rgba(14, 35, 46, 0.28);
+      background: rgba(31, 51, 40, 0.28);
     }
     .brand-rule .diamond {
       width: 5px;
@@ -264,21 +264,21 @@
     .section-head h2 { margin-bottom: 1rem; }
     .section-head .lede { margin-bottom: 0; }
 
-    /* —— Hero (Final2 navy guide pattern) —— */
+    /* —— Hero (v3 ivory-led landing) —— */
     .hero {
       padding: clamp(4rem, 10vw, 7.5rem) 0 clamp(3.5rem, 8vw, 6rem);
-      background: var(--navy);
-      color: var(--ivory);
+      background: var(--ivory);
+      color: var(--navy);
     }
     .hero .badge { margin-bottom: 1.35rem; }
     .hero h1 {
-      color: var(--ivory);
+      color: var(--navy);
       margin-bottom: 1.5rem;
       max-width: 16ch;
     }
     .hero h1 .line2 { display: block; }
     .hero .lede {
-      color: var(--muted-on-navy);
+      color: var(--muted);
       max-width: 38rem;
     }
     .hero-eyebrow-row {
@@ -291,7 +291,7 @@
       font-weight: 500;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: rgba(240, 238, 224, 0.55);
+      color: rgba(31, 51, 40, 0.55);
       max-width: 42rem;
     }
     .hero-actions {
@@ -306,13 +306,13 @@
       align-items: center;
       gap: 0.65rem 1.25rem;
       padding-top: 1.75rem;
-      border-top: 1px solid var(--line-on-navy);
+      border-top: 1px solid var(--line);
       font-size: 0.9rem;
       font-weight: 500;
-      color: rgba(240, 238, 224, 0.7);
+      color: var(--muted);
     }
     .proof span { white-space: nowrap; }
-    .proof .dot { color: rgba(240, 238, 224, 0.35); }
+    .proof .dot { color: rgba(31, 51, 40, 0.35); }
 
     /* Why / moves */
     .moves {
@@ -398,7 +398,7 @@
     }
     .split-copy p { color: var(--muted); margin: 0; max-width: 34rem; }
 
-    /* Navy pull quote (replaces full-bleed photo identity) */
+    /* Forest pull quote (deep band; weight earned off first paint) */
     .quote-band {
       background: var(--navy);
       padding: clamp(3.5rem, 8vw, 5.5rem) 0;
@@ -434,7 +434,7 @@
       border-radius: 2px;
       overflow: hidden;
       aspect-ratio: 4 / 3;
-      background: rgba(14, 35, 46, 0.06);
+      background: rgba(31, 51, 40, 0.06);
     }
     .lab-photo img {
       width: 100%;
@@ -510,78 +510,6 @@
       font-size: 0.92rem;
     }
 
-    /* Pitch / People Pitch — relationship copy + optional single sign */
-    .pitch-layout {
-      display: grid;
-      gap: 2rem;
-      margin-top: 0.5rem;
-      align-items: start;
-    }
-    @media (min-width: 880px) {
-      .pitch-layout {
-        grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.75fr);
-        gap: 2.75rem;
-        align-items: center;
-      }
-    }
-    .pitch-points {
-      margin: 1.25rem 0 0;
-      padding: 0;
-      list-style: none;
-      display: grid;
-      gap: 1rem;
-      max-width: 36rem;
-    }
-    .pitch-points li {
-      margin: 0;
-      padding: 0 0 0 1rem;
-      border-left: 2px solid var(--gold);
-      color: var(--muted-on-navy);
-      font-size: 1rem;
-      line-height: 1.55;
-    }
-    .pitch-points strong {
-      display: block;
-      color: var(--ivory);
-      font-family: var(--sans);
-      font-weight: 600;
-      font-size: 0.8rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 0.35rem;
-    }
-    .pitch-sign {
-      margin: 0;
-      max-width: 16rem;
-      justify-self: start;
-      background: var(--white);
-      border-radius: 2px;
-      overflow: hidden;
-      border: 1px solid var(--line-on-navy);
-    }
-    @media (min-width: 880px) {
-      .pitch-sign { justify-self: end; }
-    }
-    .pitch-sign img {
-      width: 100%;
-      height: auto;
-      display: block;
-      aspect-ratio: 3 / 4;
-      object-fit: contain;
-      background: var(--white);
-      padding: 0.65rem;
-    }
-    .pitch-sign figcaption {
-      font-family: var(--sans);
-      font-size: 0.7rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--muted-on-navy);
-      padding: 0.65rem 0.75rem 0.85rem;
-      background: transparent;
-    }
-    .band-navy .pitch-sign figcaption { color: rgba(240, 238, 224, 0.55); }
-
     /* Sampler */
     .sampler-grid {
       display: grid;
@@ -619,7 +547,7 @@
       .partners-list { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
     }
     .partner-item {
-      background: rgba(14, 35, 46, 0.035);
+      background: rgba(31, 51, 40, 0.035);
       padding: 2rem 1.5rem;
       text-align: center;
       border-radius: 2px;
@@ -848,7 +776,7 @@
       margin: 1.25rem 0 0;
       font-size: 0.8125rem;
       letter-spacing: 0.04em;
-      color: rgba(14, 35, 46, 0.42);
+      color: rgba(31, 51, 40, 0.42);
       font-weight: 400;
     }
 
@@ -900,7 +828,6 @@
       <ul class="nav-links" id="nav-menu">
         <li><a href="#why">Why</a></li>
         <li><a href="#lab">The Lab</a></li>
-        <li><a href="#pitch">People Pitch</a></li>
         <li><a href="#partners">Partners</a></li>
         <li><a href="#attend">Attend</a></li>
         <li><a class="nav-cta" href="#partner">Partner with us</a></li>
@@ -909,18 +836,18 @@
   </header>
 
   <main id="top">
-    <!-- Hero: Final2 navy guide pattern -->
+    <!-- Hero: v3 ivory-led landing -->
     <section class="hero" aria-label="Introduction">
       <div class="wrap">
         <div class="hero-eyebrow-row">
           <span class="badge">Founding Cohort</span>
-          <p class="hero-collab">An independent initiative · In collaboration with UAC, TOSLI &amp; Dignity.Us</p>
+          <p class="hero-collab">Independent initiative · Built with Utah Advocacy Coalition, The Other Side Leadership Institute &amp; Dignity.Us</p>
         </div>
         <h1>Utah has the heart.<span class="line2">It needs the infrastructure.</span></h1>
-        <p class="lede">Fifty executive and civic leaders. One Salt Lake City cohort. Four months of practice leading people as partners, so the care you fund and the teams you run get stronger on Monday.</p>
+        <p class="lede">Fifty executive and civic leaders in one Salt Lake City cohort. Eight sessions over four months at The Other Side Village. You practice leading people as partners, then take the tools back to the teams and budgets you already run.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#attend">Request a seat</a>
-          <a class="btn btn-ghost btn-on-dark" href="#partner">Partner with us</a>
+          <a class="btn btn-ghost" href="#partner">Partner with us</a>
         </div>
         <div class="proof" aria-label="Cohort at a glance">
           <span>Founding Cohort 2027</span>
@@ -938,26 +865,25 @@
     <section id="why" class="band-ivory">
       <div class="wrap">
         <div class="section-head">
-          <p class="section-label">The opportunity</p>
-          <h2>Generosity is already here. Connection is not.</h2>
-          <p class="lede">Utah’s funders, founders, and frontline leaders are ready to do more. Too often they work in parallel: capable, committed, and still isolated from each other. IHLab is where they practice together, so goodwill turns into work that actually connects.</p>
+          <p class="section-label">Why now</p>
+          <h2>Utah already funds care. The leaders who run it rarely share a room.</h2>
+          <p class="lede">Funders, founders, and frontline operators in Utah are already doing hard work in parallel. IHLab puts fifty of them at one table with UAC, The Other Side Leadership Institute, and Dignity.Us so the next hire, grant, and hard conversation get sharper together.</p>
         </div>
         <p style="margin-bottom:0;font-weight:500;">Three moves:</p>
         <ol class="moves">
           <li>
             <div class="num">01</div>
             <strong>See people as worth investing in.</strong>
-            <p>Move from pity to partnership.</p>
+            <p>Fund and manage as partners, not as cases.</p>
           </li>
           <li>
             <div class="num">02</div>
-            <strong>Lead with dignity under pressure.</strong>
-            <p>Use the Dignity Index when conflict gets costly.</p>
+            <strong>Lead with dignity when conflict costs money and trust.</strong>
+            <p>Use the Dignity Index in the room where it matters.</p>
           </li>
           <li>
             <div class="num">03</div>
-            <strong>Build organizations that last.</strong>
-            <p>Line up money, people, and mission so care helps people grow.</p>
+            <strong>Align money, people, and mission so care builds capacity inside your organization.</strong>
           </li>
         </ol>
         <figure class="support-photo">
@@ -974,15 +900,15 @@
             <img src="assets/photos/listening.jpg" alt="Two professionals in an attentive one-on-one conversation" width="800" height="1000" loading="lazy" decoding="async" />
           </figure>
           <div class="split-copy">
-            <p class="section-label">Why it matters</p>
-            <p class="human-line">Leadership gets clearer when someone is really listening.</p>
-            <p>Better conversations under pressure. Cleaner accountability. Care that builds capacity instead of dependency.</p>
+            <p class="section-label">In the room</p>
+            <p class="human-line">The work starts when someone is actually heard.</p>
+            <p>Clearer conflict. Accountability that raises the bar. Care that builds capacity.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Navy pull quote -->
+    <!-- Forest pull quote -->
     <aside class="quote-band" aria-label="Pull quote">
       <div class="wrap">
         <blockquote>The earliest investment pays the greatest dividends.</blockquote>
@@ -993,15 +919,15 @@
     <section id="lab" class="band-ivory">
       <div class="wrap">
         <div class="section-head">
-          <p class="section-label">A premium cohort experience</p>
-          <h2>Eight sessions. Real takeaways. A network that stays.</h2>
+          <p class="section-label">The Lab</p>
+          <h2>Eight sessions. Named peers. Tools you use the next morning.</h2>
         </div>
         <div class="lab-grid">
           <figure class="lab-photo">
             <img src="assets/photos/lounge-diverse.jpg" alt="Diverse workshop group with sticky-note wall and shared table" width="1000" height="750" loading="lazy" decoding="async" />
           </figure>
           <div>
-            <p>Eight biweekly sessions at The Other Side Village. A focused talk, then workshopping at tables with Dignity Fellows and peers who learn your work by name. You leave with tools for the next morning, and a network that stays after the last session.</p>
+            <p>Biweekly sessions at The Other Side Village in Salt Lake City. A focused talk, then table work with Dignity Fellows and leaders who learn your organization by name. Fifty seats. $2,500 per participant. Cohort I launches in 2027.</p>
           </div>
         </div>
         <dl class="stats">
@@ -1035,60 +961,30 @@
       </div>
     </section>
 
-    <!-- People Pitch (navy band chrome; posters keep native art) -->
-    <section id="pitch" class="band-navy">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="section-label">People Pitch</p>
-          <h2>The Voice pillar that feeds this room.</h2>
-          <p class="lede">People Pitch is UAC’s community platform — Voice in the Trifecta beside IHLab (Heart) and CLPHI (Mind). It is how trained Dignity Fellows reach the tables, and how funding-narrative craft enters the curriculum. Distinct brand. Shared pipeline.</p>
-        </div>
-        <div class="pitch-layout">
-          <ul class="pitch-points">
-            <li>
-              <strong>Fellow pipeline</strong>
-              UAC’s People Pitch platform is the path for Dignity Fellows who help guide small-group practice in the Lab.
-            </li>
-            <li>
-              <strong>Curriculum DNA</strong>
-              Later sessions draw on funding-narrative insights developed through People Pitch — partnership language, not pity language.
-            </li>
-            <li>
-              <strong>Sister brand, not twin</strong>
-              IHLab stays the premium Heart flagship. People Pitch keeps its own voice; we don’t dress this site in Pitch yellow and blue.
-            </li>
-          </ul>
-          <figure class="pitch-sign">
-            <img src="assets/pitch/2.png" alt="People Pitch Power Up Reunion directional A-frame (event signage)" width="864" height="1152" loading="lazy" decoding="async" />
-            <figcaption>Event signage · Power Up Reunion</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
 
     <!-- Sampler (ivory) -->
     <section id="sampler" class="band-ivory">
       <div class="wrap">
         <div class="section-head">
           <p class="section-label">What’s in the room</p>
-          <h2>A taste of the labs. The full programs stay with the partners who built them.</h2>
-          <p class="lede">A curated taste of what our collaborating partners do best. Enough to feel the difference. Enough to decide what belongs inside your organization next.</p>
+          <h2>Three partners. Full programs stay with them. You get a working taste here.</h2>
+          <p class="lede">Each session borrows what UAC, TOSLI, and Dignity.Us already do well, so you can feel the difference and decide what belongs inside your organization next.</p>
         </div>
         <div class="sampler-grid">
           <article class="card">
             <h3><a href="https://utahadvocacy.org" target="_blank" rel="noopener noreferrer">Utah Advocacy Coalition</a></h3>
-            <p>Connects leaders across Utah and runs the quiet work that keeps Cohort I moving.</p>
+            <p>Convenes Utah leaders and keeps Cohort I moving between sessions.</p>
           </article>
           <article class="card">
             <h3><a href="https://theothersidevillage.com/the-other-side-leadership-institute/" target="_blank" rel="noopener noreferrer">The Other Side Leadership Institute</a></h3>
-            <p>Civic leadership built with lived experience at the center.</p>
+            <p>Civic leadership practice grounded in lived experience at The Other Side Village.</p>
           </article>
           <article class="card">
             <h3><a href="https://dignity.us" target="_blank" rel="noopener noreferrer">Dignity.Us</a></h3>
-            <p>The Dignity Index in action: less contempt, better conversation when it counts.</p>
+            <p>The Dignity Index in the room: less contempt, better conversation when stakes are high.</p>
           </article>
         </div>
-        <p class="note">After the sampler, many leaders bring a full partner program inside their organization: Dignity.Us, Trauma-Informed Utah, or another lab that fits their team.</p>
+        <p class="note">After the cohort, many leaders bring a full partner program inside their organization (Dignity.Us, Trauma-Informed Utah, or another lab that fits).</p>
       </div>
     </section>
 
@@ -1113,8 +1009,8 @@
       <div class="wrap">
         <div class="section-head">
           <p class="section-label">Who this is for</p>
-          <h2>For leaders who carry other people’s outcomes.</h2>
-          <p class="lede">You’re already responsible for teams, budgets, and communities that need you sharp. IHLab is for the Monday after the retreat: fewer burned-out managers, clearer conflict, stronger cross-sector relationships, and a playbook written for <em>your</em> organization.</p>
+          <h2>For leaders who already carry other people’s outcomes.</h2>
+          <p class="lede">You run teams, budgets, and communities that need you sharp on Monday. IHLab is practice with fifty peers across nonprofit, business, and civic Utah, plus a playbook written for your organization.</p>
         </div>
         <div class="attend-split">
           <figure class="attend-photo">
@@ -1155,7 +1051,7 @@
       </div>
     </section>
 
-    <!-- Partner with us (ivory shell + navy panel) -->
+    <!-- Partner with us (ivory shell + forest panel) -->
     <section id="partner" class="band-ivory">
       <div class="wrap">
         <div class="panel">
@@ -1165,8 +1061,8 @@
                 <img src="assets/photos/duo-light.jpg" alt="Partnership high-five moment between two collaborators" width="800" height="500" loading="lazy" decoding="async" />
               </figure>
               <p class="section-label">Sit at the table</p>
-              <h2>Invest in the people who carry this work forward.</h2>
-              <p class="lede">Sit beside fifty of Utah’s consequential leaders while Cohort I takes shape. Open scholarship seats. Help steer the table. How contributions work, including any tax treatment, is confirmed with each partner.</p>
+              <h2>Invest in the people who will carry this work.</h2>
+              <p class="lede">Sit with fifty of Utah’s consequential leaders while Cohort I takes shape. Fund scholarship seats. Help steer the table. Contribution details, including any tax treatment, are confirmed with each partner.</p>
               <p style="margin:1.5rem 0 0;"><a class="btn btn-primary" href="mailto:alyssa@ihlab.us?subject=IHLab%20partnership%20inquiry">Talk with Alyssa</a></p>
             </div>
             <form class="form" action="mailto:alyssa@ihlab.us" method="get" enctype="text/plain" id="partner-form">
@@ -1213,7 +1109,7 @@
         <div>© <span id="year">2026</span> Investable Humanity Leadership Lab</div>
       </div>
       <p class="footer-legal">An independent initiative · In collaboration with Utah Advocacy Coalition, The Other Side Leadership Institute, and Dignity.Us</p>
-      <p class="photo-credit">Photos via Unsplash (stock placeholders until IHLab shoot). Pitch posters: People Pitch Power Up Reunion A-frames.</p>
+      <p class="photo-credit">Photos via Unsplash (stock placeholders until IHLab shoot).</p>
     </div>
   </footer>
 

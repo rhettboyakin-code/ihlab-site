@@ -1,30 +1,33 @@
-# IHLab homepage — designer handoff (v2 · Final2)
+# IHLab homepage — designer handoff (v3 · Alyssa feedback)
 
-## NOTES — Final2 redesign + People Pitch (v2)
+## NOTES — v3 light hero + forest deep + drop People Pitch
 
-**Intent:** Match `IHLab_Brand_Reference_Final2.png` faithfully. Navy/ivory section rhythm, coral badges, gold CTAs only. Visibly different from the Saprea-inspired soft-fade collage draft (v1.1).
+**Intent:** Respond to Alyssa DeHart feedback. Lighter first paint for a heavy topic; deep forest instead of navy; confident / generous / collaborative / knowledgeable voice with specificity; only the three participating orgs (no People Pitch).
 
-**What changed from v1.1**
-1. **Hero** is a full-width **navy** band (Final2 guide pattern): coral “Founding Cohort” pill, white Source Serif headline, white Work Sans lede, gold primary CTA + ghost secondary. Soft-fade stock hero photo removed as identity.
-2. **Section rhythm** alternates **ivory** and **navy**. Pale sage-tinted bands (`#E8E9DF`) removed. Sage stays restrained (accents, muted labels on light, list markers).
-3. **Labels** are gold Source Serif small-caps with wide tracking (not sage-only).
-4. **Photos** kept as support only (roundtable under Why, listening split, lounge in Lab, duo in Partner). Large soft-fade collage / friends-circle full-bleed identity removed; brand pull quote sits on a clean navy band.
-5. **People Pitch** section (`#pitch`) added after The Lab / before Sampler & Partners, with native A-frame posters.
-6. **Gold** fixed sitewide to `#A8842B` (was `#A88428`).
+**What changed from v2**
+1. **Hero** is **ivory-led** (not navy). Forest H1, muted lede, muted forest collab line, gold primary + normal ghost secondary (no `btn-on-dark` on light hero).
+2. **Deep color** `#0E232E` navy replaced by **deep forest green** `#1F3328`. CSS token name `--navy` kept for less churn; value is forest. Hardcoded rgba lines updated to `31, 51, 40`.
+3. **Dark bands** (quote, partners, partner panel, launch callout) use forest so weight stays where earned, not on first paint.
+4. **People Pitch** removed entirely: nav link, `#pitch` section, pitch CSS, footer Pitch credit. Pitch assets may remain on disk unused.
+5. **Copy** rewritten from Alyssa’s four tone words + specificity (Bob Hoffman: specific > platitudes). No antithesis / platitudes / em dashes.
+6. **Theme-color** meta → `#1F3328`.
 
-**Do not** put People Pitch yellow/blue into global CSS variables — posters keep native art inside white cards; section chrome uses IHLab tokens only.
+**Kept**
+- Sage `#556248`, ivory `#F0EEE0`, gold `#A8842B`, coral `#C86A4F`
+- Gold CTAs, coral badges only
+- 3-org sampler + Collaborating Partners (UAC, TOSLI, Dignity.Us)
+- Stats, Nov 3 2026 Shriver launch callout, quote “The earliest investment…”
 
 ---
 
-**Purpose:** Clickable HTML/CSS draft for Alyssa review. Rebuild or restyle freely in Hostinger Website Builder / WordPress later. This folder is the visual + copy source of truth for v2.
+**Purpose:** Clickable HTML/CSS draft for Alyssa review. Rebuild or restyle freely in Hostinger Website Builder / WordPress later. This folder is the visual + copy source of truth for v3.
 
 **Paths**
 - Preview file: `site/index.html`
 - Mark SVG: `site/assets/ihlab-mark.svg`
 - Optional full logo SVG: `site/assets/ihlab-logo.svg` (replace when master logo lands)
-- Pitch posters: `site/assets/pitch/1.png` … `12.png` (gallery uses 1, 2, 8, 12)
-- Copy source: `../homepage-copy-v1.md`
-- Brand reference PNG: `../IHLab_Brand_Reference_Final2.png`
+- Copy source: `../homepage-copy-v1.md` (superseded by v3 copy in `index.html`)
+- Brand reference PNG: `../IHLab_Brand_Reference_Final2.png` (v3 diverges: light hero + forest)
 
 **Local preview**
 ```bash
@@ -34,13 +37,13 @@ Open http://localhost:8770/
 
 ---
 
-## Brand tokens (Final2 — locked)
+## Brand tokens (v3)
 
 | Token | Hex | Use |
 |-------|-----|-----|
-| Navy | `#0E232E` | Primary text, dark panels, hero, navy bands, logo mark |
+| Forest (`--navy`) | `#1F3328` | Primary text, dark panels, quote/partners bands, logo mark |
 | Sage | `#556248` | Restrained accents, muted labels on light, secondary emphasis |
-| Ivory | `#F0EEE0` | Page background, light section bands |
+| Ivory | `#F0EEE0` | Page background, **hero**, light section bands |
 | Gold | `#A8842B` | **Primary CTAs and key links only**; gold small-caps section labels |
 | Coral | `#C86A4F` | **Badges / tags only** |
 
@@ -52,60 +55,42 @@ Do **not** use gold for large fills, nav text, or body links except CTAs. Do **n
 - **Labels:** Source Serif 4 Medium, uppercase / small-caps feel, wide tracking (~0.2em), **gold**
 - **Taglines / quotes:** Source Serif 4 Italic
 
-CDN used in `index.html`:
-```
-https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,500;0,600;1,500;1,600&family=Work+Sans:wght@400;500;600&display=swap
-```
-
 ### Logo
-- Organ-pipe mark: **9 ascending tapered bars**, navy only (no gold in the mark)
+- Organ-pipe mark: **9 ascending tapered bars**, forest/navy only (no gold in the mark)
 - Wordmark: Investable Humanity / Leadership Lab with a thin rule and small diamond between lines
-- Swap `assets/ihlab-mark.svg` when the master SVG arrives; keep navy-only mark rule
 
-### Guide pattern (navy band)
-Navy background + coral pill badge + white serif headline + white body + gold CTA button (+ optional ghost secondary on dark). Used for Hero and reusable dark callouts.
-
----
-
-## Section map (matches `index.html` v2)
-
-1. **Sticky nav** — mark + wordmark · Why · The Lab · **Pitch** · Partners · Attend · Partner with us (gold CTA, Work Sans)
-2. **Hero** — full-width navy · coral “Founding Cohort” badge · white headline/lede · gold + ghost CTAs · proof strip (no soft-fade hero photo)
-3. **Why** (`#why`, ivory) — opportunity · three moves · support roundtable photo
-4. **Human split** (ivory) — listening photo + italic human line
-5. **Quote band** (navy) — “The earliest investment…” (no full-bleed stock photo identity)
-6. **The Lab** (`#lab`, ivory) — lounge-diverse support photo · stats · Nov 3 Shriver callout (coral badge on navy inset)
-7. **People Pitch** (`#pitch`, navy) — framing copy · gallery of A-frames `1`, `2`, `8`, `12` · posters keep native yellow/blue art
-8. **Sampler** (`#sampler`, ivory) — partner cards (no modular photo collage)
-9. **Collaborating Partners** (`#partners`, navy) — never “Founding Partners” · tagline “Independent initiative. Shared table.”
-10. **Why attend** (`#attend`, ivory) — listening support photo · outcomes · interest form (mailto Alyssa)
-11. **Partner** (`#partner`, ivory shell + navy panel) — duo-light · partnership form (mailto Alyssa)
-12. **Footer** — quote · contact · legal line · Unsplash + Pitch credit
+### Guide pattern (v3)
+- **Light hero:** ivory bg + coral pill + forest serif headline + muted body + gold CTA + ghost secondary
+- **Dark bands:** forest bg + ivory type + gold labels (quote, partners, partner panel)
 
 ---
 
-## People Pitch assets
+## Section map (matches `index.html` v3)
 
-| Frame | Path | Role in gallery |
-|-------|------|-----------------|
-| Left arrow | `assets/pitch/1.png` | Directional A-frame |
-| Right arrow | `assets/pitch/2.png` | Directional A-frame |
-| Up arrow | `assets/pitch/8.png` | Directional A-frame |
-| Up arrow (alt) | `assets/pitch/12.png` | Directional A-frame |
-
-Remaining frames `3–7`, `9–11` available for later swaps. Framing copy only — no invented event dates.
+1. **Sticky nav** — mark + wordmark · Why · The Lab · Partners · Attend · Partner with us (gold CTA)
+2. **Hero** — ivory · coral “Founding Cohort” badge · forest headline · muted lede · gold + ghost CTAs · proof strip
+3. **Why** (`#why`, ivory) — Why now · three moves · support roundtable photo
+4. **Human split** (ivory) — listening photo · “In the room”
+5. **Quote band** (forest) — “The earliest investment…”
+6. **The Lab** (`#lab`, ivory) — lounge support photo · stats · Nov 3 Shriver callout (coral badge on forest inset)
+7. **Sampler** (`#sampler`, ivory) — three partner cards
+8. **Collaborating Partners** (`#partners`, forest) — never “Founding Partners” · “Independent initiative. Shared table.”
+9. **Why attend** (`#attend`, ivory) — outcomes · interest form (mailto Alyssa)
+10. **Partner** (`#partner`, ivory shell + forest panel) — partnership form (mailto Alyssa)
+11. **Footer** — contact · legal line · Unsplash credit
 
 ---
 
 ## Voice & framing rules (do not regress)
 
+- Tone: **confident, generous, collaborative, knowledgeable**; specific over platitudes
 - Independent initiative; **Collaborating Partners** = UAC, TOSLI, Dignity.Us (never “Founding Partners”)
+- No People Pitch / UAC trifecta Voice pillar on this page
 - No founder hero on the homepage
 - No UAC tagline
 - No tax-deductible / donate language (partner copy may say tax treatment is confirmed per partner)
-- Table leads are dignified leaders — not merely volunteers or facilitators
-- Tone: confident / optimistic / realist; no em dashes; avoid “not X, it’s Y”
-- Keep story claims: Utah cohort, 50 leaders, 8 sessions, $2,500, partners, mailto Alyssa — do not invent new claims
+- No em dashes; avoid “not X, it’s Y”
+- Keep story claims: Utah cohort, 50 leaders, 8 sessions, $2,500, partners, mailto Alyssa
 
 ---
 
@@ -116,18 +101,14 @@ Remaining frames `3–7`, `9–11` available for later swaps. Framing copy only 
 | Request a seat | `#attend` → mailto `alyssa@ihlab.us` |
 | Partner with us | `#partner` → mailto `alyssa@ihlab.us` |
 
-Forms are simple interest captures that open the visitor’s email client. Replace with Hostinger/WordPress form plugins later if desired; keep the same fields and destination email unless Alyssa changes it.
-
 ---
 
 ## Hostinger / designer edit guide
 
-**Easiest path:** recreate section by section in Hostinger Builder using this page as the comps + copy doc. Prefer navy/ivory bands over pale sage fills; open layouts over card grids.
-
-**If staying on static HTML:** edit `index.html` CSS variables at the top of `<style>`:
+**If staying on static HTML:** edit `index.html` CSS variables:
 ```css
 :root {
-  --navy: #0E232E;
+  --navy: #1F3328; /* deep forest */
   --sage: #556248;
   --ivory: #F0EEE0;
   --gold: #A8842B;
@@ -135,50 +116,34 @@ Forms are simple interest captures that open the visitor’s email client. Repla
 }
 ```
 
-**Swap logos:** drop final partner logos into `assets/` and replace the text placeholders in `#partners`. Drop master IHLab logo over `assets/ihlab-mark.svg` / `ihlab-logo.svg`.
-
 **Locked vs editable**
 | Locked (ask first) | Freely editable |
 |--------------------|-----------------|
 | Color roles (gold = CTA/labels only, coral = badge only) | Body copy length / line breaks |
 | Partner naming (“Collaborating Partners”) | Photography / optional imagery |
-| Independent-initiative framing | Spacing, section order polish |
+| Independent-initiative framing; no People Pitch | Spacing, section order polish |
 | Font pairing | Button labels if CTAs stay equivalent |
-| People Pitch yellow/blue not in global tokens | Which pitch frames (1–12) appear in the gallery |
+| Forest deep `#1F3328` + ivory hero | |
 
 ---
 
 ## SEO / meta already set
 
 - Title: Investable Humanity Leadership Lab · IHLab
-- Description: dignity-centered cohort one-liner
+- Description: fifty Utah leaders, eight sessions, UAC / TOSLI / Dignity.Us
 - Favicon: `assets/ihlab-mark.svg`
-- Theme color: navy
-
-Add OG image later when photography / brand lockup is final.
+- Theme color: forest `#1F3328`
 
 ---
 
 ## Checklist before Alyssa share
 
 - [ ] Open on phone + desktop
-- [ ] Hero reads as Final2 navy guide pattern (not soft-fade photo hero)
+- [ ] Hero reads as light ivory landing (not dark navy first paint)
+- [ ] Ghost CTA readable on ivory
 - [ ] Both CTAs scroll to the right sections
-- [ ] Pitch nav link → `#pitch`; gallery loads `assets/pitch/1,2,8,12.png`
+- [ ] No People Pitch nav / section / footer mention
 - [ ] Mailto opens with a sensible subject
 - [ ] Partners labeled Collaborating Partners
-- [ ] No founder block, no UAC tagline, no donate/tax-deductible pitch
 - [ ] Nov 3 callout visible on The Lab section
-- [ ] Gold hex is `#A8842B` everywhere
-
-
-### Pitch art (v2.1)
-One hero A-frame + 3 thumbnails (not a 4-equal grid). Headline: “A taste of the pitch energy.” People Pitch yellow/blue stay in the images only.
-
-
-### People Pitch section (v2.2)
-Rewrote from poster gallery to **relationship copy** grounded in Alyssa’s Investable Humanity Drive docs:
-- Trifecta: People Pitch = Voice; IHLab = Heart; CLPHI = Mind
-- People Pitch = Dignity Fellow pipeline + funding-narrative insights in later sessions
-- Brand: IHLab deliberately more elevated / separate from People Pitch marks
-- Visual: **one** Power Up Reunion A-frame only (all 12 Canva exports were arrow variants of the same poster)
+- [ ] Gold hex is `#A8842B`; forest deep is `#1F3328`

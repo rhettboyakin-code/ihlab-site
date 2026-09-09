@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 96" role="img" aria-labelledby="logoTitle">
   <title id="logoTitle">Investable Humanity Leadership Lab</title>
-  <g fill="#0E232E" transform="translate(0,12) scale(0.85)">
+  <g fill="#1F3328" transform="translate(0,12) scale(0.85)">
     <path d="M2.00 74 L10.20 74 L9.05 58.00 Q6.10 56.00 3.15 58.00 Z"/>
     <path d="M13.40 74 L21.75 74 L20.58 50.00 Q17.57 48.00 14.57 50.00 Z"/>
     <path d="M24.95 74 L33.45 74 L32.26 42.00 Q29.20 40.00 26.14 42.00 Z"/>
@@ -11,11 +11,11 @@
     <path d="M84.95 74 L94.20 74 L92.91 8.00 Q89.58 6.00 86.25 8.00 Z"/>
     <path d="M97.40 74 L106.80 74 L105.48 2.00 Q102.10 0.00 98.72 2.00 Z"/>
   </g>
-  <g fill="#0E232E" font-family="Georgia, 'Source Serif 4', serif">
+  <g fill="#1F3328" font-family="Georgia, 'Source Serif 4', serif">
     <text x="120" y="40" font-size="20" letter-spacing="0.14em" font-weight="500">INVESTABLE HUMANITY</text>
     <text x="120" y="72" font-size="15" letter-spacing="0.3em" font-weight="400">LEADERSHIP LAB</text>
   </g>
-  <line x1="120" y1="50" x2="218" y2="50" stroke="#0E232E" stroke-opacity="0.35" stroke-width="1"/>
-  <line x1="232" y1="50" x2="360" y2="50" stroke="#0E232E" stroke-opacity="0.35" stroke-width="1"/>
-  <rect x="222" y="47" width="6" height="6" fill="#0E232E" fill-opacity="0.55" transform="rotate(45 225 50)"/>
+  <line x1="120" y1="50" x2="218" y2="50" stroke="#1F3328" stroke-opacity="0.35" stroke-width="1"/>
+  <line x1="232" y1="50" x2="360" y2="50" stroke="#1F3328" stroke-opacity="0.35" stroke-width="1"/>
+  <rect x="222" y="47" width="6" height="6" fill="#1F3328" fill-opacity="0.55" transform="rotate(45 225 50)"/>
 </svg>
