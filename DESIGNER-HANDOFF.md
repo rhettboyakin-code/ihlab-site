@@ -1,3 +1,4 @@
+<!-- v3.2: Alyssa Sep 10 — teal-leaning deep #1C3538; photo swap; hide seat registration -->
 <!-- v3.1: restored Final2 deep hero (forest) after ivory over-correction -->
 # IHLab homepage — designer handoff (v3 · Alyssa feedback)
 
@@ -7,11 +8,11 @@
 
 **What changed from v2**
 1. **Hero** is **ivory-led** (not navy). Forest H1, muted lede, muted forest collab line, gold primary + normal ghost secondary (no `btn-on-dark` on light hero).
-2. **Deep color** `#0E232E` navy replaced by **deep forest green** `#1F3328`. CSS token name `--navy` kept for less churn; value is forest. Hardcoded rgba lines updated to `31, 51, 40`.
+2. **Deep color** `#0E232E` navy replaced by **deep forest green** `#1C3538`. CSS token name `--navy` kept for less churn; value is forest. Hardcoded rgba lines updated to `28, 53, 56`.
 3. **Dark bands** (quote, partners, partner panel, launch callout) use forest so weight stays where earned, not on first paint.
 4. **People Pitch** removed entirely: nav link, `#pitch` section, pitch CSS, footer Pitch credit. Pitch assets may remain on disk unused.
 5. **Copy** rewritten from Alyssa’s four tone words + specificity (Bob Hoffman: specific > platitudes). No antithesis / platitudes / em dashes.
-6. **Theme-color** meta → `#1F3328`.
+6. **Theme-color** meta → `#1C3538`.
 
 **Kept**
 - Sage `#556248`, ivory `#F0EEE0`, gold `#A8842B`, coral `#C86A4F`
@@ -42,7 +43,7 @@ Open http://localhost:8770/
 
 | Token | Hex | Use |
 |-------|-----|-----|
-| Forest (`--navy`) | `#1F3328` | Primary text, dark panels, quote/partners bands, logo mark |
+| Forest (`--navy`) | `#1C3538` | Primary text, dark panels, quote/partners bands, logo mark |
 | Sage | `#556248` | Restrained accents, muted labels on light, secondary emphasis |
 | Ivory | `#F0EEE0` | Page background, **hero**, light section bands |
 | Gold | `#A8842B` | **Primary CTAs and key links only**; gold small-caps section labels |
@@ -109,7 +110,7 @@ Do **not** use gold for large fills, nav text, or body links except CTAs. Do **n
 **If staying on static HTML:** edit `index.html` CSS variables:
 ```css
 :root {
-  --navy: #1F3328; /* deep forest */
+  --navy: #1C3538; /* deep forest */
   --sage: #556248;
   --ivory: #F0EEE0;
   --gold: #A8842B;
@@ -124,7 +125,7 @@ Do **not** use gold for large fills, nav text, or body links except CTAs. Do **n
 | Partner naming (“Collaborating Partners”) | Photography / optional imagery |
 | Independent-initiative framing; no People Pitch | Spacing, section order polish |
 | Font pairing | Button labels if CTAs stay equivalent |
-| Forest deep `#1F3328` + ivory hero | |
+| Forest deep `#1C3538` + ivory hero | |
 
 ---
 
@@ -133,7 +134,7 @@ Do **not** use gold for large fills, nav text, or body links except CTAs. Do **n
 - Title: Investable Humanity Leadership Lab · IHLab
 - Description: fifty Utah leaders, eight sessions, UAC / TOSLI / Dignity.Us
 - Favicon: `assets/ihlab-mark.svg`
-- Theme color: forest `#1F3328`
+- Theme color: forest `#1C3538`
 
 ---
 
@@ -147,4 +148,4 @@ Do **not** use gold for large fills, nav text, or body links except CTAs. Do **n
 - [ ] Mailto opens with a sensible subject
 - [ ] Partners labeled Collaborating Partners
 - [ ] Nov 3 callout visible on The Lab section
-- [ ] Gold hex is `#A8842B`; forest deep is `#1F3328`
+- [ ] Gold hex is `#A8842B`; forest deep is `#1C3538`
