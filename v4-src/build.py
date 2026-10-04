@@ -90,26 +90,26 @@ def mobile_cta(text_b, text_s, label, href, external=False):
     <a class="btn btn-primary" href="{href}"{ext}>{label}</a>
   </div>"""
 
-SPEAKERS = """<ul class="speakers">
-            <li class="speaker">
-              <span class="monogram" aria-hidden="true">TS</span>
-              <span class="role-tag">Keynote</span>
-              <h3>Dr. Timothy Shriver</h3>
-              <p>Co-Founder, Dignity.Us &amp; Chairman of Special Olympics</p>
-            </li>
-            <li class="speaker">
-              <span class="monogram" aria-hidden="true">JO</span>
-              <span class="role-tag">Featured speaker</span>
-              <h3>Jody Olsen</h3>
-              <p>Former Director, Peace Corps &amp; UAC Advisory Board</p>
-            </li>
-            <li class="speaker">
-              <span class="monogram" aria-hidden="true">PC</span>
-              <span class="role-tag">Featured speaker</span>
-              <h3>Preston Cochrane</h3>
-              <p>CEO, The Other Side Village</p>
-            </li>
-          </ul>"""
+# Speaker names/titles match Alyssa's official event poster & invitation (IHLL_Event_Poster.pdf).
+SPEAKER_LIST = [
+    ("timothy-shriver", "Keynote", "Dr. Timothy Shriver", ["University of Utah Impact Scholar", "Co-Founder &amp; CEO, Dignity.Us"]),
+    ("jody-olsen", "Featured speaker", "Dr. Jody Olsen", ["Former Director, Peace Corps", "UAC Advisory Board"]),
+    ("preston-cochrane", "Featured speaker", "Preston Cochrane", ["CEO, The Other Side Village"]),
+]
+
+def speakers(P):
+    out = ['<ul class="speakers">']
+    for slug, role, name, lines in SPEAKER_LIST:
+        src = f"{P}assets/speakers/{slug}"
+        title = "".join(f"<span>{l}</span>" for l in lines)
+        out.append(f"""            <li class="speaker">
+              <img class="speaker-photo" src="{src}-360.jpg" srcset="{src}-360.jpg 360w, {src}.jpg 640w" sizes="(max-width: 639px) 76px, (max-width: 939px) 104px, 144px" width="360" height="360" alt="Headshot of {name}" loading="lazy" decoding="async" />
+              <span class="role-tag">{role}</span>
+              <h3>{name}</h3>
+              <p class="speaker-title">{title}</p>
+            </li>""")
+    out.append("          </ul>")
+    return "\n".join(out)
 
 SCARCITY_LAUNCH = """<div class="scarcity" role="note" aria-label="Limited seating">
             <span class="badge">Limited seating</span>
@@ -121,8 +121,8 @@ SNAPSHOT = f"""<aside class="snapshot" aria-label="Event snapshot">
           <p class="snap-title">Event snapshot</p>
           <dl>
             <div class="row"><dt>Date &amp; time</dt><dd>November 3, 2026<small>11:00 AM – 1:00 PM MT</small></dd></div>
-            <div class="row"><dt>Location</dt><dd>Zions Bank Founder’s Room (18th Floor)<small>One South Main Street, Salt Lake City, UT 84133</small></dd></div>
-            <div class="row"><dt>Format</dt><dd>VIP Lunch • Keynote Address • Panel and Q&amp;A Discussion</dd></div>
+            <div class="row"><dt>Location</dt><dd>Zions Bank Founder’s Room, 18th Floor<small>One South Main Street, Salt Lake City, UT 84133</small></dd></div>
+            <div class="row"><dt>Format</dt><dd>Lunch · Keynote · Panel Discussion</dd></div>
           </dl>
           <a class="btn btn-primary btn-lg" href="{LUMA}" target="_blank" rel="noopener">Request your seat <span class="arrow" aria-hidden="true">→</span></a>
           <p class="fine">Opens registration on Luma</p>
@@ -132,7 +132,7 @@ GAINS = """<ul class="gains">
             <li><strong>A practice for hard conversations.</strong> Implement the <em>Dignity Index</em> framework to turn conflict into clarity. Navigate a tense boardroom, community resistance, or team misalignment without losing relationships and trust.</li>
             <li><strong>Capital and mission alignment.</strong> Learn to structure operations so every dollar directly expands your operational capacity and community yield.</li>
             <li><strong>A cabinet of peers who know you and your work.</strong> Working alongside 50 executive leaders and IHLab Dignity Fellows who learn your organization and stay in your corner.</li>
-            <li><strong>A playbook for your organization.</strong> Jumpstart planning for immediate 3-year growth with practical tools you can use on Monday.</li>
+            <li><strong>A playbook for your organization.</strong> Jumpstart planning for immediate 3&#8209;year growth with practical tools you can use on Monday.</li>
             <li><strong>A view around the corner.</strong> Alumni of IHLab have the opportunity to bring a full partner program inside their organization.</li>
           </ul>"""
 
@@ -255,16 +255,16 @@ def home():
           <span class="badge">Founding Cohort 2027 · Salt Lake City</span>
           <p class="hero-eyebrow">Bridging the Divide in Community Impact</p>
         </div>
-        <h1>Utah has the heart. <span class="line2">Now it needs the people &amp; playbook to scale it.</span></h1>
+        <h1>Utah has the heart. <span class="line2">Now it needs the people and playbook to scale it.</span></h1>
         <p class="lede">Utah's funders, founders, and nonprofit leaders care deeply, but they rarely get to learn alongside each other in a way that brings the best parts together. The Investable Humanity Leadership Lab brings fifty leaders into one room to master dignity-centered conflict resolution, align capital with mission, and lead organizations that turn good intentions into lasting change.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary btn-lg" href="{LUMA}" target="_blank" rel="noopener">Request your seat at the launch <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn btn-primary btn-lg" href="{LUMA}" target="_blank" rel="noopener">Request your seat <span class="arrow" aria-hidden="true">→</span></a>
         </div>
         <div class="cred-bar">
           <p class="cred-orgs"><span class="cred-label">Built by</span><span>The Other Side Leadership Institute</span><span class="dot" aria-hidden="true">·</span><span>Dignity.Us</span><span class="dot" aria-hidden="true">·</span><span>Utah Advocacy Coalition</span></p>
           <a class="keynote-callout" href="#launch">
             <span class="k-date"><b>3</b><span>Nov</span></span>
-            <span>Launching with keynote <strong>Dr. Timothy Shriver</strong>, co-founder of Dignity.Us</span>
+            <span>Launching with keynote <strong>Dr. Timothy Shriver</strong>, Co-Founder &amp; CEO of Dignity.Us</span>
           </a>
         </div>
       </div>
@@ -277,12 +277,10 @@ def home():
           <h2>Be in the room where it all begins.</h2>
           <p class="lede">The Investable Humanity Leadership Lab launches over lunch with the people shaping how Utah leads. Join fellow civic pioneers, funders, and executive directors to hear it first, meet the minds behind the magic, and see why this cohort is the one to be part of.</p>
         </div>
+        <p class="speakers-label">Featured speakers</p>
+        {speakers(P)}
         <div class="launch-grid">
-          <div>
-            <p class="speakers-label">Featured speakers</p>
-            {SPEAKERS}
-            {SCARCITY_LAUNCH}
-          </div>
+          {SCARCITY_LAUNCH}
           {SNAPSHOT}
         </div>
       </div>
@@ -328,7 +326,7 @@ def home():
         <p class="speakers-label" style="color:var(--ivory);">Specific ways to give</p>
         {tiers(False)}
         <p class="give-note">{TAX_LINE}</p>
-        <div class="cta-row"><a class="btn btn-primary btn-lg" href="give/">Give Today <span class="arrow" aria-hidden="true">→</span></a></div>
+        <div class="cta-row"><a class="btn btn-primary btn-lg" href="give/">Give today <span class="arrow" aria-hidden="true">→</span></a></div>
       </div>
     </section>
 
@@ -341,7 +339,7 @@ def home():
         </div>
         {trio(False)}
         <p class="coalition-close">Each has its own mission and track record. Together, they give Utah's leaders something none could offer alone.</p>
-        <div class="cta-row"><a class="btn btn-ghost" href="about/">Meet the Organizations <span class="arrow" aria-hidden="true">→</span></a></div>
+        <div class="cta-row"><a class="btn btn-ghost" href="about/">Meet the organizations <span class="arrow" aria-hidden="true">→</span></a></div>
       </div>
     </section>
 
@@ -422,7 +420,7 @@ def lab():
           <div class="how"><h3>Session format</h3><p>Each 3.5-hour master session opens with a focused talk, then moves into table work on your own organization.</p></div>
           <div class="how"><h3>Peer tables</h3><p>Work alongside 50 executive leaders, with peers who learn your organization and stay in your corner.</p></div>
           <div class="how"><h3>Dignity Fellows</h3><p>IHLab Dignity Fellows join the table work, learn your organization, and bring the Dignity Index into the conversation.</p></div>
-          <div class="how"><h3>The playbook</h3><p>Jumpstart planning for immediate 3-year growth with practical tools you can use on Monday.</p></div>
+          <div class="how"><h3>The playbook</h3><p>Jumpstart planning for immediate 3&#8209;year growth with practical tools you can use on Monday.</p></div>
         </div>
       </div>
     </section>
@@ -480,7 +478,7 @@ def lab():
           <details><summary>When and where does the cohort meet?</summary><p>Early 2027 at The Other Side Village in Salt Lake City: 8 biweekly master sessions, 3.5 hours each. Session dates will be shared with the cohort.</p></details>
           <details><summary>What does it cost?</summary><p>$2,500 per participant. Donors can fully fund a leader's seat through a Scholarship Seat, so ask us about scholarship availability.</p></details>
           <details><summary>How is the November 3 launch related to the cohort?</summary><p>The launch luncheon on November 3, 2026 at the Zions Bank Founder’s Room introduces the Lab, with keynote Dr. Timothy Shriver. Cohort sessions begin in early 2027. <a href="{LUMA}" target="_blank" rel="noopener">Request your seat at the launch</a>.</p></details>
-          <details><summary>Who is behind IHLab?</summary><p>Utah Advocacy Coalition, The Other Side Leadership Institute, and Dignity.Us. <a href="../about/">Meet the Organizations</a>.</p></details>
+          <details><summary>Who is behind IHLab?</summary><p>Utah Advocacy Coalition, The Other Side Leadership Institute, and Dignity.Us. <a href="../about/">Meet the organizations</a>.</p></details>
           <details><summary>What happens after the cohort?</summary><p>Alumni have the opportunity to bring a full partner program inside their organization, such as Dignity.Us, Trauma-Informed Utah, or another lab that fits.</p></details>
         </div>
       </div>
@@ -571,7 +569,7 @@ def about():
     h += page_hero(P, "About", None, "Three organizations. Decades of experience. One table.",
         "Advocacy, lived experience, and dignity: all under one roof.",
         "Investable Humanity is born from a unified vision to combine policy advocacy, lived-experience leadership, and dignity-centered communication into a single, high-impact leadership experience.",
-        f'<a class="btn btn-primary btn-lg" href="{LUMA}" target="_blank" rel="noopener">Request your seat at the launch <span class="arrow" aria-hidden="true">→</span></a><a class="btn btn-ghost btn-on-dark" href="../lab/">Explore the Cohort</a>')
+        f'<a class="btn btn-primary btn-lg" href="{LUMA}" target="_blank" rel="noopener">Request your seat <span class="arrow" aria-hidden="true">→</span></a><a class="btn btn-ghost btn-on-dark" href="../lab/">Explore the cohort</a>')
     h += f"""  <main>
     <section id="coalition" class="band-ivory">
       <div class="wrap">
@@ -609,7 +607,7 @@ def about():
           <h2>Be in the room where it all begins.</h2>
           <p class="lede">Leaders from across the coalition open the Lab over lunch at the Zions Bank Founder’s Room.</p>
         </div>
-        {SPEAKERS}
+        {speakers(P)}
         <div class="cta-row"><a class="btn btn-primary btn-lg" href="{LUMA}" target="_blank" rel="noopener">Request your seat <span class="arrow" aria-hidden="true">→</span></a><span style="color:var(--muted);font-size:0.95rem;">Strictly limited to 100 leaders.</span></div>
       </div>
     </section>
@@ -630,10 +628,16 @@ def about():
     h += footer(P, mobile_cta("Nov 3 · Launch luncheon", "Limited to 100 leaders", "Request your seat", LUMA, True))
     return h
 
+import re as _re
+def smart(html):
+    """Curly apostrophes in visible text only (skips tags, attributes, scripts)."""
+    parts = _re.split(r"(<script.*?</script>|<[^>]+>)", html, flags=_re.S)
+    return "".join(x if x.startswith("<") else _re.sub(r"(?<=\w)'(?=\w)", "\u2019", x) for x in parts)
+
 for path, fn in [("index.html", home), ("lab/index.html", lab), ("give/index.html", give), ("about/index.html", about)]:
     p = ROOT / path
     p.parent.mkdir(parents=True, exist_ok=True)
-    p.write_text(fn())
+    p.write_text(smart(fn()))
 (ROOT / "robots.txt").write_text("User-agent: *\nDisallow: /\n")
 (ROOT / "vercel.json").write_text('''{
   "headers": [

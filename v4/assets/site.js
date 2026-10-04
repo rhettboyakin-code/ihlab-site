@@ -33,14 +33,16 @@
     });
   });
 
-  /* Sticky mobile CTA appears after the hero scrolls away */
+  /* Sticky mobile CTA appears after the hero scrolls away and steps aside over the footer */
   var bar = document.querySelector(".mobile-cta");
   var hero = document.querySelector(".hero, .page-hero");
+  var foot = document.querySelector(".footer");
   if (bar && hero && "IntersectionObserver" in window) {
     document.body.classList.add("has-mobile-cta");
-    new IntersectionObserver(function (entries) {
-      bar.classList.toggle("show", !entries[0].isIntersecting);
-    }).observe(hero);
+    var heroVisible = true, footVisible = false;
+    var update = function () { bar.classList.toggle("show", !heroVisible && !footVisible); };
+    new IntersectionObserver(function (entries) { heroVisible = entries[0].isIntersecting; update(); }).observe(hero);
+    if (foot) new IntersectionObserver(function (entries) { footVisible = entries[0].isIntersecting; update(); }).observe(foot);
   }
 
   var y = document.getElementById("year");
